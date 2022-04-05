@@ -123,7 +123,7 @@ a.login, .register{
 
 .column {
   width: 100%;
-  padding: 0 1em 1em 1em;
+  padding: 0 1em 6em 1em;
   text-align: left;
 }
 .title-heading{
@@ -252,7 +252,6 @@ p {
     max-width: 50%;
   }
   .title-heading{
-    margin-top: 15%;
     margin-bottom: 5%;
     margin-left: 5%;
   }
