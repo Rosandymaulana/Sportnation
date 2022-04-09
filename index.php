@@ -39,15 +39,15 @@
                     <li><a href="#">SportVenue</a></li>
                     <li><a href="#">Rooms</a></li>
                     <li><a href="#">Content</a></li>
-                    <li><a href="./Pages/Customer Service/index.html">Support</a></li>
+                    <li><a href="./Pages/Customer Service/c_sevice.html">Support</a></li>
                     <!-- <li><a href="#">Payments</a></li> -->
                 </ul>
             </div>
 
             <div class="button-box">
-                <a href="/Pages/Login/index.html" class="login"
+                <a href="/Pages/Login/login.html" class="login"
                     style="background-color:#a9e7cc; color: #1D1D1D;">Masuk</a>
-                <a href="/Pages/Register/index.html" class="register" style="background-color:#008080">Daftar</a>
+                <a href="/Pages/Register/register.html" class="register" style="background-color:#008080">Daftar</a>
             </div>
         </div>
 
