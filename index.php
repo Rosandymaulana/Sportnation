@@ -23,7 +23,7 @@
 
             <span class="logo navLogo">
                 <a href="#">
-                    <img class="brand" src="/images/logo.png" alt="" style="width: 1.5rem; margin-right: .7rem;">
+                    <img class="brand" src="../images/logo.png" alt="" style="width: 1.5rem; margin-right: .7rem;">
                     Sportnation
                 </a>
             </span>
@@ -39,15 +39,15 @@
                     <li><a href="#">SportVenue</a></li>
                     <li><a href="#">Rooms</a></li>
                     <li><a href="#">Content</a></li>
-                    <li><a href="./Pages/Customer Service/c_sevice.html">Support</a></li>
+                    <li><a href="../Pages/Customer Service/c_sevice.html">Support</a></li>
                     <!-- <li><a href="#">Payments</a></li> -->
                 </ul>
             </div>
 
             <div class="button-box">
-                <a href="/Pages/Login/login.html" class="login"
+                <a href="Pages/Login/login.html" class="login"
                     style="background-color:#a9e7cc; color: #1D1D1D;">Masuk</a>
-                <a href="/Pages/Register/register.html" class="register" style="background-color:#008080">Daftar</a>
+                <a href="Pages/Register/register.html" class="register" style="background-color:#008080">Daftar</a>
             </div>
         </div>
 
@@ -78,7 +78,7 @@
 
     <div class="card">
         <div class="main-images">
-            <img src="/images/image-1.jpg" alt="image-1">
+            <img src="../images/image-1.jpg" alt="image-1">
         </div>
         <div class="details">
             <span class="shoe_name">SM Futsal</span>

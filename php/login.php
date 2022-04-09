@@ -13,7 +13,7 @@ $cek = mysqli_num_rows($result);
 
 if($cek > 0){
     $_SESSION['id'] = $row['cust_id'];
-    $_SESSION['nama'] = $row['name'];
+    $_SESSION['nama'] = $row['nama_cust'];
     $_SESSION['status'] = 'login';
     echo '<script type ="text/JavaScript">';  
     echo 'location="../index.php";';
