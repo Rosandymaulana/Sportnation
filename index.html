@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
 
     <!-- ===== CSS ===== -->
     <link rel="stylesheet" href="style.css">
@@ -13,7 +14,6 @@
     <!-- ===== Boxicons CSS ===== -->
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
 
-    <!--<title>Responsive Navigation Menu Bar</title>-->
 </head>
 
 <body>
@@ -35,12 +35,11 @@
                 </div>
 
                 <ul class="nav-links">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">SportVenue</a></li>
-                    <li><a href="#">Rooms</a></li>
-                    <li><a href="#">Content</a></li>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#sportvenue">SportVenue</a></li>
+                    <li><a href="#rooms">Rooms</a></li>
+                    <li><a href="#content">Content</a></li>
                     <li><a href="./Pages/Customer Service/index.html">Support</a></li>
-                    <!-- <li><a href="#">Payments</a></li> -->
                 </ul>
             </div>
 
@@ -50,69 +49,114 @@
                 <a href="/Pages/Register/index.html" class="register" style="background-color:#008080">Daftar</a>
             </div>
         </div>
-
     </nav>
 
-    <div class="hero-section">
-        <div class="left">
-            <h1>
-                Learn the art of <br />
-                Game Dev
-            </h1>
+    <main>
+        <div class="hero-section" id="home">
+            <div class="left">
+                <h1>
+                    Mulai Olahraga<br /> Sekarang
+                </h1>
+                <p>
+                    This is a comprehensive course on Game Development. You will learn everything from generating an
+                    idea to
+                    publishing your games to different platforms.
+                </p>
 
-            <p>
-                This is a comprehensive course on Game Development. You will learn
-                everything from generating an idea to publishing your games to
-                different platforms.
-            </p>
-
-            <a href="#" class="cta" style="background-color:#a9e7cc; color: #000000;">Cari Informasi</a>
-        </div>
-
-        <!-- Slide Show Prosess -->
-        <!-- <div class="right">
-            <img src="images/image-1.jpg" alt="" />
-        </div> -->
-
-    </div>
-
-    <div class="card">
-        <div class="main-images">
-            <img src="/images/image-1.jpg" alt="image-1">
-        </div>
-        <div class="details">
-            <span class="shoe_name">SM Futsal</span>
-            <p>Lorem ipsum dolor sit lorenm i amet, consectetur adipisicing elit. Eum, ea, ducimus!</p>
-            <div class="stars">
-                <i class='bx bxs-star'></i>
-                <i class='bx bxs-star'></i>
-                <i class='bx bxs-star'></i>
-                <i class='bx bxs-star'></i>
-                <i class='bx bx-star'></i>
+                <a href="#" class="cta" style="background-color:#a9e7cc; color: #000000;">Cari Informasi</a>
             </div>
+
+            <div class="right">
+                <img src="/images/bg_jumbotron.svg" alt="" />
+            </div>
+
         </div>
 
-        <!-- Sementara Tidak Difungsikan -->
-        <!-- <div class="color-price">
-            <div class="color-option">
-                <span class="color">Colour:</span>
-                <div class="circles">
-                    <span class="circle blue active" id="blue"></span>
-                    <span class="circle pink " id="pink"></span>
-                    <span class="circle yellow " id="yellow"></span>
+        <div class="" id="about">
+            <section class="about" id="about">
+                <h1>Tentang Sportnation</h1>
+                <div class="about-me">
+                    <figure>
+                        <img src="/images/about.jpg" alt="">
+                    </figure>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione fugit ipsum delectus
+                        quia,molestiae
+                        consequatur dolorum quidem, itaque qui consectetur vel? Molestias voluptatem amet quam
+                        voluptates
+                        quis saepe est eveniet!</p>
+                </div>
+            </section>
+        </div>
+
+        <div class="sportvenue" id="sportvenue">
+            <h1>SportVenue</h1>
+            <div class="container">
+                <div class="box">
+                    <div class="image">
+                        <img src="/images/sportvenue-1.jpg">
+                    </div>
+                    <div class="name_job">Baseball Club</div>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                    <p> Lorem ipsum dolor sitamet, stphen hawkin so adipisicing elit. Ratione disuja doloremque
+                        reiciendi
+                        nemo.
+                    </p>
+                    <div class="btns">
+                        <button>Lihat Detail</button>
+                        <button>Booking</button>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="image">
+                        <img src="/images/sportvenue-2.jpg">
+                    </div>
+                    <div class="name_job">Sarojin Swimming Pool</div>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                    <p> Lorem ipsum dolor sitamet, stphen hawkin so adipisicing elit. Ratione disuja doloremque
+                        reiciendi
+                        nemo.
+                    </p>
+                    <div class="btns">
+                        <button>Lihat Detail </button>
+                        <button>Booking</button>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="image">
+                        <img src="/images/sportvenue-3.jpg">
+                    </div>
+                    <div class="name_job">VolleyBall Malang</div>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                    <p> Lorem ipsum dolor sitamet, stphen hawkin so adipisicing elit. Ratione disuja doloremque
+                        reiciendi
+                        nemo.
+                    </p>
+                    <div class="btns">
+                        <button>Lihat Detail</button>
+                        <button>Booking</button>
+                    </div>
                 </div>
             </div>
-            <div class="price">
-                <span class="price_num">$09.00</span>
-                <span class="price_letter">Nine dollar only</span>
-            </div>
-        </div> -->
-
-        <div class="button">
-            <div class="button-layer"></div>
-            <button>Join Room</button>
         </div>
-    </div>
+    </main>
 
     <footer class="footer">
         <div class="container">
