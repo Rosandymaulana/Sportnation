@@ -76,12 +76,22 @@
 
     </div>
 
+    <?php
+        include "connect.php";
+        $query = "select * from tempat";
+        $result = mysqli_query($connect, $query);
+        $i = 1;
+         if(mysqli_num_rows($result) == 0){
+            echo "Table masih kosong!";
+        }else{
+        while($row = mysqli_fetch_assoc($result)){       
+        ?>
     <div class="card">
         <div class="main-images">
             <img src="../images/image-1.jpg" alt="image-1">
         </div>
         <div class="details">
-            <span class="shoe_name">SM Futsal</span>
+            <span class="shoe_name"><?php echo $row['nama_tempat']?></span>
             <p>Lorem ipsum dolor sit lorenm i amet, consectetur adipisicing elit. Eum, ea, ducimus!</p>
             <div class="stars">
                 <i class='bx bxs-star'></i>
@@ -91,7 +101,10 @@
                 <i class='bx bx-star'></i>
             </div>
         </div>
-
+<?php
+        }
+    }
+    ?>
         <!-- Sementara Tidak Difungsikan -->
         <!-- <div class="color-price">
             <div class="color-option">
