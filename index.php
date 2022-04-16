@@ -44,10 +44,23 @@
             </div>
 
             <div class="button-box">
-                <a href="Pages/Login/index.html" class="login"
+                <?php
+    include "connect.php";
+    session_start();
+    if($_SESSION['status'] == 'login'){
+?>
+                <a onclick="logout()" class="logout"
+                    style="background-color:#a9e7cc; color: #1D1D1D;">Logout</a>
+                    <?php
+    }else{
+        ?>
+<a href="Pages/Login/index.html" class="login"
                     style="background-color:#a9e7cc; color: #1D1D1D;">Masuk</a>
                 <a href="Pages/Register/index.html" class="register" 
                     style="background-color:#008080">Daftar</a>
+        <?php
+    }
+                    ?>
             </div>
         </div>
     </nav>
@@ -75,7 +88,12 @@
 
         <div class="" id="about">
             <section class="about" id="about">
-                <h1>Tentang Sportnation</h1>
+                <?php
+            $query = "Select * from event";
+            $result = mysqli_query($connect, $query);
+         if(mysqli_num_rows($result) == 0){
+?>
+<h1>Tentang Sportnation</h1>
                 <div class="about-me">
                     <figure>
                         <img src="images/about.jpg" alt="">
@@ -86,12 +104,32 @@
                         voluptates
                         quis saepe est eveniet!</p>
                 </div>
+<?php
+        }else{
+        while($row = mysqli_fetch_assoc($result)){       
+        ?>
+                <h1><?php echo $row['judul_event'] ?></h1>
+                <div class="about-me">
+                    <figure>
+                        <img src="images/<?php echo $row['banner'] ?>" alt="">
+                    </figure>
+                    <p><?php echo $row['desc'] ?></p>
+                </div>
+                <?php
+        }
+    }
+                ?>
             </section>
         </div>
 
         <div class="sportvenue" id="sportvenue">
             <h1>SportVenue</h1>
             <div class="container">
+                <?php
+            $query = "select * from tempat Limit 3";
+            $result = mysqli_query($connect, $query);
+         if(mysqli_num_rows($result) == 0){
+                ?>
                 <div class="box">
                     <div class="image">
                         <img src="images/sportvenue-1.jpg">
@@ -113,48 +151,33 @@
                         <button>Booking</button>
                     </div>
                 </div>
+                <?php
+        }else{
+            while($row = mysqli_fetch_assoc($result)){
+                ?>
                 <div class="box">
                     <div class="image">
-                        <img src="images/sportvenue-2.jpg">
+                        <img src="images/<?php echo $row['foto_tempat']?>.jpg">
                     </div>
-                    <div class="name_job">Sarojin Swimming Pool</div>
+                    <div class="name_job"><?php echo $row['nama_tempat']?></div>
                     <div class="rating">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
                         <i class="far fa-star"></i>
                         <i class="far fa-star"></i>
-                    </div>
-                    <p> Lorem ipsum dolor sitamet, stphen hawkin so adipisicing elit. Ratione disuja doloremque
-                        reiciendi
-                        nemo.
-                    </p>
-                    <div class="btns">
-                        <button>Lihat Detail </button>
-                        <button>Booking</button>
-                    </div>
-                </div>
-                <div class="box">
-                    <div class="image">
-                        <img src="images/sportvenue-3.jpg">
-                    </div>
-                    <div class="name_job">VolleyBall Malang</div>
-                    <div class="rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
                         <i class="far fa-star"></i>
                     </div>
-                    <p> Lorem ipsum dolor sitamet, stphen hawkin so adipisicing elit. Ratione disuja doloremque
-                        reiciendi
-                        nemo.
+                    <p> <?php echo $row['fasilitas']?>
                     </p>
                     <div class="btns">
                         <button>Lihat Detail</button>
                         <button>Booking</button>
                     </div>
                 </div>
+                <?php
+            }
+        }
+        ?>
             </div>
         </div>
     </main>

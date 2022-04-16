@@ -1,8 +1,6 @@
 <?php
 include 'connect.php';
 
-session_start();
-session_destroy();
 $email = $_GET['email'];
 $password = md5($_GET['password']);
 
@@ -12,6 +10,7 @@ $row = mysqli_fetch_assoc($result);
 $cek = mysqli_num_rows($result);
 
 if ($cek > 0) {
+    session_start();
     $_SESSION['id'] = $row['cust_id'];
     $_SESSION['nama'] = $row['nama_cust'];
     $_SESSION['status'] = 'login';
