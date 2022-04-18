@@ -214,7 +214,7 @@
                     <h4>Company</h4>
                     <ul class="foot">
                         <li><a href="./Pages/Acount/index.html">Account</a></li>
-                        <li><a href="#">bag</a></li>
+                        <li><a href="/Pages/Booking/index.html">Booking</a></li>
                         <li><a href="#">shoes</a></li>
                         <li><a href="#">dress</a></li>
                     </ul>
