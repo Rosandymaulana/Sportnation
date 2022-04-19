@@ -19,7 +19,7 @@ if($cek > 0){
     echo '</script>';
 }else{
     echo '<script type ="text/JavaScript">';  
-    echo 'alert("Username atau Password Anda salah");location="../Pages/Login/index.html";';
+    // echo 'alert("Username atau Password Anda salah");location="../Pages/Login/index.html";';
     echo '</script>';
     echo mysqli_error($connect);
 }

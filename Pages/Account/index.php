@@ -40,24 +40,24 @@ $id = $_SESSION['id'];
                     </div>
                     <div class="input-box">
                         <span class="details">Phone Number</span>
-                        <input id="phone" name="phone" type="tel" placeholder="Enter your number" value="<?php echo $row['phone'] ?>" required>
+                        <input id="phone" name="phone" type="tel" placeholder="Enter your number" value="<?php echo $row['telp'] ?>" required>
                     </div>
                     <div class="input-box">
                         <span class="details">Password</span>
-                        <input id="password" name="password" type="password" placeholder="Enter your password" value="<?php echo md5($row['password']) ?>" required>
+                        <input id="password" name="password" type="password" placeholder="Enter your password" value="<?php echo $row['password'] ?>" required>
                     </div>
                     <div class="input-box">
                         <span class="details">Confirm Password</span>
-                        <input id="c_password" name="c_password" type="password" placeholder="Confirm your password" value="<?php echo md5($row['password']) ?>" required>
+                        <input id="c_password" name="c_password" type="password" placeholder="Confirm your password" value="<?php echo $row['password'] ?>" required>
                     </div>
                 </div>
                 <?php
                 }
                 ?>
                 <div class="gender-details">
-                    <input type="radio" name="gender" id="dot-1" checked="checked">
-                    <input type="radio" name="gender" id="dot-2">
-                    <input type="radio" name="gender" id="dot-3">
+                    <input type="radio" name="gender1" id="dot-1" checked="checked">
+                    <input type="radio" name="gender2" id="dot-2">
+                    <input type="radio" name="gender3" id="dot-3">
                     <span class="gender-title">Gender</span>
                     <div class="category">
                         <label for="dot-1">
