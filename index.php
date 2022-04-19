@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<?php 
+    session_start();
+    ?>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,7 +11,7 @@
 
     <!-- ===== CSS ===== -->
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="content,css">
+    <link rel="stylesheet" href="content.css">
 
     <!-- ===== Boxicons CSS ===== -->
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
@@ -23,7 +25,7 @@
 
             <span class="logo navLogo">
                 <a href="#">
-                    <img class="brand" src="/images/logo.png" alt="" style="width: 1.5rem; margin-right: .7rem;">
+                    <img class="brand" src="images/logo.png" alt="" style="width: 1.5rem; margin-right: .7rem;">
                     Sportnation
                 </a>
             </span>
@@ -40,32 +42,29 @@
                     <li><a href="#rooms">Rooms</a></li>
                     <li><a href="#content">Content</a></li>
                     <li><a href="Pages/Customer Service/index.html">Support</a></li>
+                <?php
+    include "php/connect.php";
+    if (!isset($_SESSION['status']))
+                    {
+                        ?>
+                    <li><a href="Pages/Account/index.php">Account</a></li>
                 </ul>
             </div>
 
             <div class="button-box">
+                <a href="Pages/Login/index.html" class="login"
+                    style="background-color:#a9e7cc; color: #1D1D1D;">Masuk</a>
+                <a href="Pages/Register/index.html" class="register" style="background-color:#008080">Daftar</a>
                 <?php
-    include "connect.php";
-    session_start();
-    echo "hai";
-    if($_SESSION['status'] == 'login'){
-?>
-                <a onclick="logout()" class="logout"
-                    style="background-color:#a9e7cc; color: #1D1D1D;">Logout</a>
-                    <?php
     }else{
         ?>
-<a href="Pages/Login/index.html" class="login"
-                    style="background-color:#a9e7cc; color: #1D1D1D;">Masuk</a>
-                <a href="Pages/Register/index.html" class="register" 
-                    style="background-color:#008080">Daftar</a>
-        <?php
+        <a href="php/logout.php" class="logout" style="background-color:#a9e7cc; color: #1D1D1D;">Logout</a>
+                <?php
     }
                     ?>
             </div>
         </div>
     </nav>
-
     <main>
         <div class="hero-section" id="home">
             <div class="left">
@@ -90,31 +89,21 @@
         <div class="" id="about">
             <section class="about" id="about">
                 <?php
-            $query = "Select * from event";
+            $query = "Select * from event limit 1";
             $result = mysqli_query($connect, $query);
          if(mysqli_num_rows($result) == 0){
 ?>
-<h1>Tentang Sportnation</h1>
-                <div class="about-me">
-                    <figure>
-                        <img src="images/about.jpg" alt="">
-                    </figure>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione fugit ipsum delectus
-                        quia,molestiae
-                        consequatur dolorum quidem, itaque qui consectetur vel? Molestias voluptatem amet quam
-                        voluptates
-                        quis saepe est eveniet!</p>
-                </div>
+<h1>Tidak ada event</h1>
 <?php
         }else{
         while($row = mysqli_fetch_assoc($result)){       
         ?>
-                <h1><?php echo $row['judul_event'] ?></h1>
+                <h1><?php echo $row['judul'] ?></h1>
                 <div class="about-me">
                     <figure>
-                        <img src="images/<?php echo $row['banner'] ?>" alt="">
+                        <img src="<?php echo $row['foto'] ?>" alt="">
                     </figure>
-                    <p><?php echo $row['desc'] ?></p>
+                    <p><?php echo $row['deskripsi'] ?></p>
                 </div>
                 <?php
         }
@@ -158,7 +147,7 @@
                 ?>
                 <div class="box">
                     <div class="image">
-                        <img src="images/<?php echo $row['foto_tempat']?>.jpg">
+                        <img src="<?php echo $row['foto_tempat']?>">
                     </div>
                     <div class="name_job"><?php echo $row['nama_tempat']?></div>
                     <div class="rating">
@@ -215,7 +204,7 @@
                     <h4>Company</h4>
                     <ul class="foot">
                         <li><a href="./Pages/Acount/index.html">Account</a></li>
-                        <li><a href="/Pages/Booking/index.html">Booking</a></li>
+                        <li><a href="#">bag</a></li>
                         <li><a href="#">shoes</a></li>
                         <li><a href="#">dress</a></li>
                     </ul>
@@ -223,7 +212,7 @@
                 <div class="footer-col">
                     <h4>Contact</h4>
                     <ul class="foot">
-                        <li><a href="Pages/Contact/index.html">contact us</a></li>
+                        <li><a href="Pages/Contact/index.php">contact us</a></li>
                         <li><a href="#">bag</a></li>
                         <li><a href="#">shoes</a></li>
                         <li><a href="#">dress</a></li>
