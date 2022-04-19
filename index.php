@@ -47,6 +47,7 @@
                 <?php
     include "connect.php";
     session_start();
+    echo "hai";
     if($_SESSION['status'] == 'login'){
 ?>
                 <a onclick="logout()" class="logout"
