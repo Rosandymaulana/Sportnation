@@ -45,22 +45,19 @@
 
             <div class="button-box">
                 <?php
-    include "connect.php";
-    session_start();
-    if($_SESSION['status'] == 'login'){
-?>
-                <a onclick="logout()" class="logout"
-                    style="background-color:#a9e7cc; color: #1D1D1D;">Logout</a>
-                    <?php
-    }else{
-        ?>
-<a href="Pages/Login/index.html" class="login"
-                    style="background-color:#a9e7cc; color: #1D1D1D;">Masuk</a>
-                <a href="Pages/Register/index.html" class="register" 
-                    style="background-color:#008080">Daftar</a>
-        <?php
-    }
-                    ?>
+                include "connect.php";
+                session_start();
+                if ($_SESSION['status'] == 'login') {
+                ?>
+                    <a onclick="logout()" class="logout" style="background-color:#a9e7cc; color: #1D1D1D;">Logout</a>
+                <?php
+                } else {
+                ?>
+                    <a href="Pages/Login/index.html" class="login" style="background-color:#a9e7cc; color: #1D1D1D;">Masuk</a>
+                    <a href="Pages/Register/index.html" class="register" style="background-color:#008080">Daftar</a>
+                <?php
+                }
+                ?>
             </div>
         </div>
     </nav>
@@ -89,35 +86,35 @@
         <div class="" id="about">
             <section class="about" id="about">
                 <?php
-            $query = "Select * from event";
-            $result = mysqli_query($connect, $query);
-         if(mysqli_num_rows($result) == 0){
-?>
-<h1>Tentang Sportnation</h1>
-                <div class="about-me">
-                    <figure>
-                        <img src="images/about.jpg" alt="">
-                    </figure>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione fugit ipsum delectus
-                        quia,molestiae
-                        consequatur dolorum quidem, itaque qui consectetur vel? Molestias voluptatem amet quam
-                        voluptates
-                        quis saepe est eveniet!</p>
-                </div>
-<?php
-        }else{
-        while($row = mysqli_fetch_assoc($result)){       
-        ?>
-                <h1><?php echo $row['judul_event'] ?></h1>
-                <div class="about-me">
-                    <figure>
-                        <img src="images/<?php echo $row['banner'] ?>" alt="">
-                    </figure>
-                    <p><?php echo $row['desc'] ?></p>
-                </div>
+                $query = "Select * from event";
+                $result = mysqli_query($connect, $query);
+                if (mysqli_num_rows($result) == 0) {
+                ?>
+                    <h1>Tentang Sportnation</h1>
+                    <div class="about-me">
+                        <figure>
+                            <img src="images/about.jpg" alt="">
+                        </figure>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione fugit ipsum delectus
+                            quia,molestiae
+                            consequatur dolorum quidem, itaque qui consectetur vel? Molestias voluptatem amet quam
+                            voluptates
+                            quis saepe est eveniet!</p>
+                    </div>
+                    <?php
+                } else {
+                    while ($row = mysqli_fetch_assoc($result)) {
+                    ?>
+                        <h1><?php echo $row['judul_event'] ?></h1>
+                        <div class="about-me">
+                            <figure>
+                                <img src="images/<?php echo $row['banner'] ?>" alt="">
+                            </figure>
+                            <p><?php echo $row['desc'] ?></p>
+                        </div>
                 <?php
-        }
-    }
+                    }
+                }
                 ?>
             </section>
         </div>
@@ -126,58 +123,58 @@
             <h1>SportVenue</h1>
             <div class="container">
                 <?php
-            $query = "select * from tempat Limit 3";
-            $result = mysqli_query($connect, $query);
-         if(mysqli_num_rows($result) == 0){
+                $query = "select * from tempat Limit 3";
+                $result = mysqli_query($connect, $query);
+                if (mysqli_num_rows($result) == 0) {
                 ?>
-                <div class="box">
-                    <div class="image">
-                        <img src="images/sportvenue-1.jpg">
+                    <div class="box">
+                        <div class="image">
+                            <img src="images/sportvenue-1.jpg">
+                        </div>
+                        <div class="name_job">Baseball Club</div>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                        <p> Lorem ipsum dolor sitamet, stphen hawkin so adipisicing elit. Ratione disuja doloremque
+                            reiciendi
+                            nemo.
+                        </p>
+                        <div class="btns">
+                            <button>Lihat Detail</button>
+                            <button>Booking</button>
+                        </div>
                     </div>
-                    <div class="name_job">Baseball Club</div>
-                    <div class="rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="far fa-star"></i>
-                        <i class="far fa-star"></i>
-                        <i class="far fa-star"></i>
-                    </div>
-                    <p> Lorem ipsum dolor sitamet, stphen hawkin so adipisicing elit. Ratione disuja doloremque
-                        reiciendi
-                        nemo.
-                    </p>
-                    <div class="btns">
-                        <button>Lihat Detail</button>
-                        <button>Booking</button>
-                    </div>
-                </div>
+                    <?php
+                } else {
+                    while ($row = mysqli_fetch_assoc($result)) {
+                    ?>
+                        <div class="box">
+                            <div class="image">
+                                <img src="images/<?php echo $row['foto_tempat'] ?>.jpg">
+                            </div>
+                            <div class="name_job"><?php echo $row['nama_tempat'] ?></div>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <p> <?php echo $row['fasilitas'] ?>
+                            </p>
+                            <div class="btns">
+                                <button>Lihat Detail</button>
+                                <button>Booking</button>
+                            </div>
+                        </div>
                 <?php
-        }else{
-            while($row = mysqli_fetch_assoc($result)){
+                    }
+                }
                 ?>
-                <div class="box">
-                    <div class="image">
-                        <img src="images/<?php echo $row['foto_tempat']?>.jpg">
-                    </div>
-                    <div class="name_job"><?php echo $row['nama_tempat']?></div>
-                    <div class="rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="far fa-star"></i>
-                        <i class="far fa-star"></i>
-                        <i class="far fa-star"></i>
-                    </div>
-                    <p> <?php echo $row['fasilitas']?>
-                    </p>
-                    <div class="btns">
-                        <button>Lihat Detail</button>
-                        <button>Booking</button>
-                    </div>
-                </div>
-                <?php
-            }
-        }
-        ?>
             </div>
         </div>
     </main>
@@ -233,7 +230,6 @@
     </footer>
 
     <script>
-
         const body = document.querySelector("body"),
             nav = document.querySelector("nav"),
             searchToggle = document.querySelector(".searchToggle"),
@@ -251,7 +247,6 @@
                 nav.classList.remove("active");
             }
         });
-
     </script>
 
 </body>
