@@ -50,7 +50,7 @@
                 </div>
                 <div class="form-group">
                     <div class="form-row form-row-1 ">
-                        <label for="email">email</label>
+                        <label for="email">Email</label>
                         <input type="text" name="email" id="email" class="input-text" required
                             pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}" placeholder="email">
                     </div>
@@ -58,6 +58,21 @@
                         <label for="password">Password</label>
                         <input type="password" name="password" id="password" class="input-text" placeholder="password"
                             required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-row form-row-1 ">
+                        <label for="no-telp">No. Telp</label>
+                        <input type="number" name="no-telp" id="no-telp" class="input-text" required
+                            placeholder="no-telp">
+                    </div>
+                    <div class="form-row form-row-1 gender">
+                        <label for="gender">Gender</label>
+                        <select name="gender" id="">
+                            <option value="male">Male</option><br>
+                            <option value="female">Female</option>
+                            <option value="prefer-not-to-say">Prefer not to say</option>
+                        </select>
                     </div>
                 </div>
                 <div class="form-checkbox">
@@ -83,7 +98,7 @@
                 </div>
                 <center style="margin-top: 2rem;">
                     <div class="text-sign-up-text">Sudah punya account?
-                        <a href="../Login/index.html">Login</a>
+                        <button><a href="../Login/index.html">Login</a></button>
                     </div>
                 </center><br>
             </form>
