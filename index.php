@@ -33,7 +33,7 @@ session_start();
 
             <div class="menu">
                 <div class="logo-toggle">
-                    <span class="logo"><a href="#">Sportnation</a></span>
+                    <span class="logo"><a href="index.php">Sportnation</a></span>
                     <i class='bx bx-x siderbarClose'></i>
                 </div>
 
@@ -159,7 +159,7 @@ session_start();
                             </p>
                             <div class="btns">
                                 <button>Lihat Detail</button>
-                                <button>Booking</button>
+                                <button onclick="document.location='Pages/Booking/index.php'">Booking</button>
                             </div>
                         </div>
                 <?php
@@ -201,7 +201,7 @@ session_start();
                 <div class="footer-col">
                     <h4>Company</h4>
                     <ul class="foot">
-                        <li><a href="./Pages/Acount/index.html">Account</a></li>
+                        <li><a href="Pages/Acount/index.html">Account</a></li>
                         <li><a href="#">bag</a></li>
                         <li><a href="#">shoes</a></li>
                         <li><a href="#">dress</a></li>
