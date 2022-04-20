@@ -27,7 +27,7 @@ $id = $_SESSION['id'];
           <div class="user-details">
             <div class="input-box">
               <span class="details">Username</span>
-              <input type="text" placeholder="Enter your name" value="<?php echo $row['username'] ?> required>
+              <input type="text" placeholder="Enter your name" value="<?php echo $row['username'] ?>" required>
             </div>
             <div class=" input-box">
               <span class="details">Fullname</span>
