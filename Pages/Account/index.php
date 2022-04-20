@@ -51,13 +51,10 @@ $id = $_SESSION['id'];
                         <input id="c_password" name="c_password" type="password" placeholder="Confirm your password" value="<?php echo $row['password'] ?>" required>
                     </div>
                 </div>
-                <?php
-                }
-                ?>
                 <div class="gender-details">
-                    <input type="radio" name="gender" id="dot-1" checked="checked">
-                    <input type="radio" name="gender" id="dot-2">
-                    <input type="radio" name="gender" id="dot-3">
+                    <input type="radio" name="gender" value="Male" id="dot-1" <?php if($row['gender'] == "Male"){?> checked="checked"<?php ;}?>>
+                    <input type="radio" name="gender" value="Female" id="dot-2" <?php if($row['gender'] == "Female"){?> checked="checked"<?php ;}?>>
+                    <input type="radio" name="gender" value="Prefer not to say" id="dot-3" <?php if($row['gender'] == "Prefer not to say"){?> checked="checked"<?php ;}?>>
                     <span class="gender-title">Gender</span>
                     <div class="category">
                         <label for="dot-1">
@@ -70,10 +67,13 @@ $id = $_SESSION['id'];
                         </label>
                         <label for="dot-3">
                             <span class="dot three"></span>
-                            <span class="gender">Prefer not to say</span>
+                            <span class="gender" >Prefer not to say</span>
                         </label>
                     </div>
                 </div>
+                <?php
+                }
+                ?>
                 <div class="user-post">
                     <div class="button">
                         <input onClick="history.go(-1)" type="button" value="Discard Changes" id="discard">

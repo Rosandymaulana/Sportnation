@@ -44,21 +44,20 @@
                     <li><a href="Pages/Customer Service/index.html">Support</a></li>
                 <?php
     include "php/connect.php";
-    if (!isset($_SESSION['status']))
+    if (isset($_SESSION['status']))
                     {
                         ?>
                     <li><a href="Pages/Account/index.php">Account</a></li>
                 </ul>
             </div>
-
+        <a href="php/logout.php" class="register" style="background-color:#a9e7cc; color: #1D1D1D;">Logout</a>
+                <?php
+    }else{
+        ?>
             <div class="button-box">
                 <a href="Pages/Login/index.html" class="login"
                     style="background-color:#a9e7cc; color: #1D1D1D;">Masuk</a>
                 <a href="Pages/Register/index.html" class="register" style="background-color:#008080">Daftar</a>
-                <?php
-    }else{
-        ?>
-        <a href="php/logout.php" class="logout" style="background-color:#a9e7cc; color: #1D1D1D;">Logout</a>
                 <?php
     }
                     ?>
