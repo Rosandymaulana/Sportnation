@@ -20,20 +20,20 @@
 
             <div class="card-content">
                 <h3>Reservation</h3>
-                <form>
+                <form action="../../php/booking.php" method="get">
                     <div class="form-row">
-                        <input type="date" placeholder="Choose Date" required>
-                        <input type="time" placeholder="Set Time" min="09:00" max="18:00" required>
+                        <input name="date" type="date" placeholder="Choose Date" required>
+                        <input name="time" type="time" placeholder="Set Time" min="09:00" max="18:00" required>
                     </div>
 
                     <div class="form-row">
-                        <input type="text" placeholder="Full Name">
-                        <input type="text" placeholder="Phone Number">
+                        <input name="name" value="" type="text" placeholder="Full Name">
+                        <input name="phone" type="text" placeholder="Phone Number">
                     </div>
 
                     <div class="form-row">
-                        <input type="number" placeholder="Time playing? (in hours)" min="1">
-                        
+                        <input name="jam" type="number" placeholder="Time playing? (in hours)" min="1">
+
                     </div>
                     <div class="form-row center">
                         <input type="submit" value="Book Now">
@@ -43,4 +43,5 @@
     </section>
 
 </body>
+
 </html>
