@@ -27,7 +27,7 @@ $id = $_SESSION['id'];
           <div class="user-details">
             <div class="input-box">
               <span class="details">Username</span>
-              <input type="text" placeholder="Enter your name" value="<?php echo $row['username'] ?> required>
+              <input type="text" placeholder="Enter your name" value="<?php echo $row['username'] ?>" required>
             </div>
             <div class=" input-box">
               <span class="details">Fullname</span>
@@ -51,11 +51,11 @@ $id = $_SESSION['id'];
             </div>
           </div>
           <div class="gender-details">
-            <input type="radio" name="gender" value="Male" id="dot-1" <?php if ($row['gender'] == "Male") { ?> checked="checked" <?php;
+            <input type="radio" name="gender" value="Male" id="dot-1" <?php if ($row['gender'] == "Male") { ?> checked="checked" <?php ;
                                                                                                                             } ?>>
-            <input type="radio" name="gender" value="Female" id="dot-2" <?php if ($row['gender'] == "Female") { ?> checked="checked" <?php;
+            <input type="radio" name="gender" value="Female" id="dot-2" <?php if ($row['gender'] == "Female") { ?> checked="checked" <?php ;
                                                                                                                                     } ?>>
-            <input type="radio" name="gender" value="Prefer not to say" id="dot-3" <?php if ($row['gender'] == "Prefer not to say") { ?> checked="checked" <?php;
+            <input type="radio" name="gender" value="Prefer not to say" id="dot-3" <?php if ($row['gender'] == "Prefer not to say") { ?> checked="checked" <?php ;
                                                                                                                                                           } ?>>
             <span class="gender-title">Gender</span>
             <div class="category">
