@@ -5,6 +5,8 @@ $nama = $_POST['nama'];
 $username = $_POST['username'];
 $email = $_POST['email'];
 $password = md5($_POST['password']);
+$no_telp = $_POST['no_telp'];
+$gender = $_POST['gender'];
 
 $query = "SELECT nomor FROM user ORDER BY nomor DESC LIMIT 1";
 $nomor = mysqli_query($connect, $query);
@@ -16,9 +18,9 @@ if($nomor > 0) {
 }
 echo "$nomorInt";
 
-$query = "INSERT INTO user(user_id, nomor, nama, username, email, password)
+$query = "INSERT INTO user(user_id, nomor, nama, username, email, password, no_telp, jenis_kelamin)
                 VALUES
-                    ('C-$nomorInt', '$nomorInt', '$nama', '$username', '$email', '$password')
+                    ('C-$nomorInt', '$nomorInt', '$nama', '$username', '$email', '$password', '$no_telp', '$gender')
          ";
 mysqli_query($connect, $query);
 
