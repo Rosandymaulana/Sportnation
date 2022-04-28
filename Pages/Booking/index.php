@@ -37,7 +37,7 @@ $id = $_SESSION['id'];
 
                     <div class="form-row">
                         <input name="name" value="<?php echo $row['nama'] ?>" type="text" placeholder="Full Name">
-                        <input name="phone" value="<?php echo $row['telp'] ?>" type="text" placeholder="Phone Number">
+                        <input name="phone" value="<?php echo $row['no_telp'] ?>" type="text" placeholder="Phone Number">
                     </div>
 
                     <div class="form-row">
