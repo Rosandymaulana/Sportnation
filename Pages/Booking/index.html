@@ -7,6 +7,24 @@
     <title>Booking Form</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="booking.css">
+
+    <script>
+        function cek() {
+
+            var nama_lap = document.getElementById("form1").select1.value;
+            var harga = document.getElementById("content");
+
+            if (nama_lap == "lapangan1") {
+                harga.innerHTML = "Rp. 50.000,-/jam";
+            } else if (nama_lap == "lapangan2") {
+                harga.innerHTML = "Rp. 60.000,-/jam";
+            } else if (nama_lap == "lapangan3") {
+                harga.innerHTML = "Rp. 70.000,-/jam";
+            } else if (nama_lap == "lapangan4") {
+                harga.innerHTML = "Rp. 80.000,-/jam";
+            }
+        }
+    </script>
 </head>
 
 <body>
@@ -20,20 +38,33 @@
 
             <div class="card-content">
                 <h3>Reservation</h3>
-                <form>
-                    <div class="form-row">
-                        <input type="date" placeholder="Choose Date" required>
-                        <input type="time" placeholder="Set Time" min="09:00" max="18:00" required>
-                    </div>
-
+                <form id="form1" name="form1">
                     <div class="form-row">
                         <input type="text" placeholder="Full Name">
                         <input type="text" placeholder="Phone Number">
                     </div>
+                    <div class="form-row">
+                        <input type="date" placeholder="Choose Date" required>
+                        <input type="time" placeholder="Set Time" min="09:00" max="18:00" required>
+                    </div>
+                    <div class="form-row">
+                        <select id="select1" name="select1">
+                            <option>Select Venues</option>
+                            <option value="lapangan1">Lapangan 1</option>
+                            <option value="lapangan2">Lapangan 2</option>
+                            <option value="lapangan3">Lapangan 3</option>
+                            <option value="lapangan4">Lapangan 4</option>
+                        </select>
+                        <input type="submit" id="btncek" value="Price Cek" onclick="cek()">
+                        
+                    </div>
+                    <div id="content" class="form-row"></div>
+
+
 
                     <div class="form-row">
                         <input type="number" placeholder="Time playing? (in hours)" min="1">
-                        
+
                     </div>
                     <div class="form-row center">
                         <input type="submit" value="Book Now">
@@ -43,4 +74,5 @@
     </section>
 
 </body>
+
 </html>

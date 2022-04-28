@@ -40,7 +40,7 @@ body {
 
 .card-content {
     background: #fff;
-    height: 400px;
+    height: 500px;
 }
 
 .card-content h3 {
@@ -57,7 +57,7 @@ body {
     margin: 0 auto;
 }
 
-form input {
+form input, select {
     display: block;
     width: 100%;
     margin: 15px 12px;
@@ -98,7 +98,7 @@ form input[type="date"]:valid::before {
     content: "";
 }
 
-form input[type="time"]::before {
+/* form input[type="time"]::before {
     content: attr(placeholder);
     position: absolute;
     color: #999999;
@@ -116,12 +116,23 @@ form input[type="time"]:valid {
 form input[type="time"]:focus::before,
 form input[type="time"]:valid::before {
     content: "";
-}
+} */
 
 form input[type=submit] {
     color: #fff;
     width: 35%;
     background: #008080;
+    padding: 12px 0;
+    border-radius: 4px;
+    cursor: pointer;
+}
+#content{
+    margin-left: 40px;
+}
+#btncek{
+    color: #fff;
+    width: 35%;
+    background: darkseagreen;
     padding: 12px 0;
     border-radius: 4px;
     cursor: pointer;
