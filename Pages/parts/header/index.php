@@ -18,8 +18,8 @@
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#sportvenue">SportVenue</a></li>
-                <li><a href="#rooms">Rooms</a></li>
                 <li><a href="#content">Content</a></li>
+                <!-- <li><a href="#rooms">Rooms</a></li> -->
                 <li><a href="Pages/Customer Service/index.php">Support</a></li>
                 <?php
                 if (isset($_SESSION['status'])) {
