@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<?php
+session_start();
+include "../../php/connect.php";
+?>
+
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Customer Support</title>
@@ -16,40 +21,12 @@
 </head>
 
 <body>
+  <?php
+  include "../parts/header/index.php";
+  ?>
+
   <!-- navigasi -->
-  <nav>
-    <div class="nav-bar">
-      <i class='bx bx-menu sidebarOpen'></i>
 
-      <span class="logo navLogo">
-        <a href="#">
-          <img class="brand" src="/images/logo.png" alt="" style="width: 1.5rem; margin-right: .7rem;">
-          Sportnation
-        </a>
-      </span>
-
-      <div class="menu">
-        <div class="logo-toggle">
-          <span class="logo"><a href="#">Sportnation</a></span>
-          <i class='bx bx-x siderbarClose'></i>
-        </div>
-
-        <ul class="nav-links">
-          <li><a href="/index.html">Home</a></li>
-          <li><a href="#">SportVenue</a></li>
-          <li><a href="#">Rooms</a></li>
-          <li><a href="#">Content</a></li>
-          <li><a href="./Pages/Customer Service/index.html">Support</a></li>
-          <!-- <li><a href="#">Payments</a></li> -->
-        </ul>
-      </div>
-
-      <div class="button-box">
-        <a href="#" class="login" style="background-color:#a9e7cc; color: #1D1D1D;">Masuk</a>
-        <a href="#" class="register" style="background-color:#008080">Daftar</a>
-      </div>
-    </div>
-  </nav>
 
   <section>
 
@@ -98,7 +75,6 @@
   </section>
 
   <script>
-
     const body = document.querySelector("body"),
       nav = document.querySelector("nav"),
       searchToggle = document.querySelector(".searchToggle"),
@@ -116,7 +92,6 @@
         nav.classList.remove("active");
       }
     });
-
   </script>
 </body>
 

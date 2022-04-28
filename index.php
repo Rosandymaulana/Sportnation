@@ -2,6 +2,7 @@
 <html lang="en">
 <?php
 session_start();
+include "php/connect.php";
 ?>
 
 <head>
@@ -20,49 +21,9 @@ session_start();
 </head>
 
 <body>
-    <nav>
-        <div class="nav-bar">
-            <i class='bx bx-menu sidebarOpen'></i>
-
-            <span class="logo navLogo">
-                <a href="#">
-                    <img class="brand" src="images/logo.png" alt="" style="width: 1.5rem; margin-right: .7rem;">
-                    Sportnation
-                </a>
-            </span>
-
-            <div class="menu">
-                <div class="logo-toggle">
-                    <span class="logo"><a href="index.php">Sportnation</a></span>
-                    <i class='bx bx-x siderbarClose'></i>
-                </div>
-
-                <ul class="nav-links">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#sportvenue">SportVenue</a></li>
-                    <li><a href="#rooms">Rooms</a></li>
-                    <li><a href="#content">Content</a></li>
-                    <li><a href="Pages/Customer Service/index.html">Support</a></li>
-                    <?php
-                    include "php/connect.php";
-                    if (isset($_SESSION['status'])) {
-                    ?>
-                        <li><a href="Pages/Account/index.php">Account</a></li>
-                </ul>
-            </div>
-            <a href="php/logout.php" class="register" style="background-color:#a9e7cc; color: #1D1D1D;">Logout</a>
-        <?php
-                    } else {
-        ?>
-            <div class="button-box">
-                <a href="Pages/Login/index.html" class="login" style="background-color:#a9e7cc; color: #1D1D1D;">Masuk</a>
-                <a href="Pages/Register/index.html" class="register" style="background-color:#008080">Daftar</a>
-            <?php
-                    }
-            ?>
-            </div>
-        </div>
-    </nav>
+    <?php
+    include "Pages/parts/header/index.php";
+    ?>
     <main>
         <div class="hero-section" id="home">
             <div class="left">
@@ -170,55 +131,9 @@ session_start();
         </div>
     </main>
 
-    <footer class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="footer-col">
-                    <h4>follow us</h4>
-                    <div class="social-links">
-                        <p style="color: whitesmoke;">getting used to sports is good</p>
-                    </div>
-                </div>
-                <div class="footer-col">
-                    <h4>Help</h4>
-                    <ul class="foot">
-                        <li><a href="#">about us</a></li>
-                        <li><a href="#">our services</a></li>
-                        <li><a href="#">privacy policy</a></li>
-                        <li><a href="#">affiliate program</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Features</h4>
-                    <ul class="foot">
-                        <li><a href="#">FAQ</a></li>
-                        <li><a href="#">shipping</a></li>
-                        <li><a href="#">returns</a></li>
-                        <li><a href="#">order status</a></li>
-                        <li><a href="#">payment options</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Company</h4>
-                    <ul class="foot">
-                        <li><a href="Pages/Acount/index.html">Account</a></li>
-                        <li><a href="#">bag</a></li>
-                        <li><a href="#">shoes</a></li>
-                        <li><a href="#">dress</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Contact</h4>
-                    <ul class="foot">
-                        <li><a href="Pages/Contact/index.php">contact us</a></li>
-                        <li><a href="#">bag</a></li>
-                        <li><a href="#">shoes</a></li>
-                        <li><a href="#">dress</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <?php
+    include "./Pages/parts/footer/footer.php";
+    ?>
 
     <script>
         const body = document.querySelector("body"),
