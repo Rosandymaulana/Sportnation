@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<?php
+session_start();
+include "../../php/connect.php";
+$id = $_SESSION['id'];
+?>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,41 +16,52 @@
 
 <body>
     <main>
+        
+
         <h5>Pembayaran</h5>
         <div class="content">
-
+        <?php
+            $query = "select b.*, u.*, l.* from booking b inner join user u on b.user_id = u.user_id
+            inner join lapangan l on b.lap_id = l.lap_id 
+            where book_id = '$book_id'";
+            $result = mysqli_query($connect, $query);
+            while ($row = mysqli_fetch_assoc($result)) {
+                $jam_mulai = $row['jam'];
+                $durasi = $row['durasi'];
+                $jam_berakhir = date('h a', strtotime("$durasi:00:00"))+$jam_mulai;
+        ?>
             <section class="left">
-                <img src="/images/Pembayaran-Image-1.png" alt="">
+                <img src="../../images/Pembayaran-Image-1.png" alt="">
                 <div class="data">
                     <table class="infoTempat">
                         <tr>
                             <td>No. Booking</td>
-                            <td>TR109K8J8</td>
+                            <td><?php echo "$book_id" ?></td>
                         </tr>
                         <tr>
-                            <td>Nama Tempat</td>
-                            <td>GYM</td>
+                            <td>Lapangan</td>
+                            <td><?php echo $row['lap_id'] ?></td>
                         </tr>
                     </table>
 
                     <table class="infoTanggal">
                         <tr>
                             <td>Tanggal</td>
-                            <td class="tgl">17-03-2022</td>
+                            <td class="tgl"><?php echo $row['tgl'] ?></td>
                         </tr>
                         <tr>
                             <td>Jam Mulai</td>
-                            <td>15.30</td>
+                            <td><?php echo $jam_mulai ?></td>
                         </tr>
                         <tr>
                             <td>Jam Berakhir</td>
-                            <td>17.30</td>
+                            <td><?php echo $jam_berakhir ?></td>
                         </tr>
                     </table>
 
                 </div>
                 <figure>
-                    <img src="/images/Pembayaran-MetodePembayaran.png" alt="">
+                    <img src="../../images/Pembayaran-MetodePembayaran.png" alt="">
                     <div class="metode">
                         <h1>Metode Pembayaran</h1>
 
@@ -58,21 +73,23 @@
                     </div>
                 </figure>
             </section>
-
+        <?php
+            }
+        ?>
             <section class="right">
                 <h4>Penyewa</h4>
                 <section class="myacount">
                     <figure>
-                        <img src="/images/PembayaranAcount.png" alt="">
-                        <h3>Uranus</h3>
+                        <img src="../../images/PembayaranAcount.png" alt="">
+                        <h3><?php echo $row['nama'] ?></h3>
                     </figure>
                     <article class="myemail">
                         <h1>Email Address</h1>
-                        <h1 class="email">Email@myemail.com</h1>
+                        <h1 class="email"><?php echo $row['email'] ?></h1>
                     </article>
                     <article class="mytelp">
                         <h1>No.Telp</h1>
-                        <h1 class="telp">**********</h1>
+                        <h1 class="telp"><?php echo $row['no_telp'] ?></h1>
                     </article>
                 </section>
                 <section class="tagihan">
@@ -81,7 +98,7 @@
                         <table>
                             <tr>
                                 <td class="detailharga">Harga</td>
-                                <td>Rp. 76.000&nbsp&nbsp</td>
+                                <td><?php echo $row['harga'] ?>&nbsp&nbsp</td>
                                 <td>/Jam</td>
                             </tr>
                         </table>
@@ -90,7 +107,7 @@
                         <table>
                             <tr>
                                 <td class="detailTotal">Total</td>
-                                <td>2&nbsp&nbsp</td>
+                                <td><?php echo $durasi ?>&nbsp&nbsp</td>
                                 <td>/Jam</td>
                             </tr>
                         </table>
@@ -106,10 +123,10 @@
                     </article>
                     <br>
                     <article class="totalKeseluruhan">
-                        <h1>Rp. 129.000</h1>
+                        <h1><?php echo $row['total'] ?></h1>
                     </article>
                     <div class="pickButton">
-                        <a href="/index.php" class="btnBatalkan"></i>Batalkan</a>
+                        <a href="../../index.php" class="btnBatalkan"></i>Batalkan</a>
                         <a href="" class="btnKonfirmasi">Konfirmasi</a>
                     </div>
                 </section>
