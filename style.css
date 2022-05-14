@@ -400,7 +400,7 @@ ul {
 
 .footer-col {
   width: 20%;
-  padding: 0 15px;
+  padding: 0 50px;
 }
 
 .footer-col h4 {
@@ -417,7 +417,7 @@ ul {
   position: absolute;
   left: 0;
   bottom: -10px;
-  background-color: #e91e63;
+  background-color: #2c1ee9;
   height: 2px;
   box-sizing: border-box;
   width: 50px;
@@ -460,7 +460,6 @@ ul {
   color: #24262b;
   background-color: #ffffff;
 }
-
 
 /* Toogle Button Navigasi */
 @media (max-width: 600px) {

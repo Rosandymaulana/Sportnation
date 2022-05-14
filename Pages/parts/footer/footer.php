@@ -8,7 +8,7 @@
     <title>Parts | Footer</title>
 
     <!-- ===== CSS ===== -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="footer.css">
 
     <!-- ===== Boxicons CSS ===== -->
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
@@ -20,7 +20,7 @@
         <div class="container">
             <div class="row">
                 <div class="footer-col">
-                    <h4>follow us</h4>
+                    <h4>Follow us</h4>
                     <div class="social-links">
                         <p style="color: whitesmoke;">getting used to sports is good</p>
                     </div>

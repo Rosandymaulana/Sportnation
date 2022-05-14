@@ -27,43 +27,32 @@ $id = $_SESSION['id'];
                 <h3>Reservation</h3>
                 <form  id="form1" name="form1" action="../../php/booking.php" method="get">
                     <?php
-        $query = "Select * from user where user_id = '$id'";
-        $result = mysqli_query($connect, $query);
-        while ($row = mysqli_fetch_array($result)) {
-        ?>
+                  
+                    $query = "Select * from user where user_id = '$id'";
+                    $result = mysqli_query($connect, $query);
+                    while ($row = mysqli_fetch_array($result)) {
+                    ?>
+                        <div class="form-row">
+                            <input name="date" type="date" placeholder="Choose Date" required>
+                            <input name="time" type="time" placeholder="Set Time" min="09:00" max="18:00" required>
+                        </div>
 
-                    <div class="form-row">
-                        <input name="name" value="<?php echo $row['nama'] ?>" type="text" placeholder="Full Name">
-                        <input name="phone" value="<?php echo $row['telp'] ?>" type="text" placeholder="Phone Number">
-                    </div>
-                    <div class="form-row">
-                        <input name="date" type="date" placeholder="Choose Date" required>
-                        <input name="time" type="time" placeholder="Set Time" min="09:00" max="18:00" required>
-                    </div>
+                        <div class="form-row">
+                            <input name="name" value="<?php echo $row['nama'] ?>" type="text" placeholder="Full Name">
+                            <input name="phone" value="<?php echo $row['no_telp'] ?>" type="text" placeholder="Phone Number">
+                        </div>
 
-                    <div class="form-row">
-                        <select id="select1" name="select1">
-                            <option>Select Venues</option>
-                            <option value="lapangan1">Lapangan 1</option>
-                            <option value="lapangan2">Lapangan 2</option>
-                            <option value="lapangan3">Lapangan 3</option>
-                            <option value="lapangan4">Lapangan 4</option>
-                        </select>
-                        <input type="submit" id="btncek" value="Price Cek" onclick="cek()">
-                    </div>
-                    <div id="content" class="form-row"></div>
+                        <div class="form-row">
+                            <input name="jam" type="number" placeholder="Time playing? (in hours)" min="1">
 
-                    <div class="form-row">
-                        <input name="jam" type="number" placeholder="Time playing? (in hours)" min="1">
-
-                    </div>
-                    <div class="form-row center">
-                        <input type="submit" value="Book Now">
-                    </div>
+                        </div>
+                        <div class="form-row center">
+                            <input type="submit" value="Book Now">
+                        </div>
 
                     <?php
-        }
-        ?>
+                    }
+                    ?>
             </div>
         </div>
     </section>
