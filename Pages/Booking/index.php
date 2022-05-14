@@ -12,7 +12,7 @@ $id = $_SESSION['id'];
     <title>Booking Form</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="booking.css">
-</head>
+    <link rel="stylesheet" href="cek.js">
 
 <body>
 
@@ -25,8 +25,9 @@ $id = $_SESSION['id'];
 
             <div class="card-content">
                 <h3>Reservation</h3>
-                <form action="../../php/booking.php" method="get">
+                <form  id="form1" name="form1" action="../../php/booking.php" method="get">
                     <?php
+                  
                     $query = "Select * from user where user_id = '$id'";
                     $result = mysqli_query($connect, $query);
                     while ($row = mysqli_fetch_array($result)) {
