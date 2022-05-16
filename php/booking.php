@@ -3,7 +3,6 @@ include 'connect.php';
 session_start();
 
 $user_id = $_SESSION['id'];
-$book_id = 
 $jam = $_GET['jam'];
 $date = $_GET['date'];
 $time = $_GET['time'];
@@ -21,15 +20,16 @@ $query = "INSERT INTO booking (book_id, nomor, user_id, durasi, tgl, jam)
             VALUES
                 ('B-0$nomorInt', '$nomorInt', '$user_id', '$jam', '$date', '$time')
          ";
-mysqli_query($connect, $query);
 
-header('Location: ../Pages/Booking/index.php');
+         mysqli_query($connect, $query);
+         
+echo "<script>window.location.href='../Pages/Pembayaran/index.php?uid=$nomorint'</script>"
 
     // if(mysqli_query($connect, $query)){
     //     echo "<script> 
     //         alert('Anda berhasil Booking !');
     //         document.location.href = '../index.php';
-    //     </script>";
+    //     </>";
     // }else{
     //     echo "<script> 
     //         alert('Proses booking gagal ditambahkan. Silahkan coba lagi');

@@ -25,7 +25,7 @@ $id = $_SESSION['id'];
 
             <div class="card-content">
                 <h3>Reservation</h3>
-                <form  id="form1" name="form1" action="../../php/booking.php" method="get">
+                <form  id="form-booking" name="form1" action="../../php/booking.php" method="get">
                     <?php
                   
                     $query = "Select * from user where user_id = '$id'";
