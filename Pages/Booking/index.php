@@ -43,6 +43,17 @@ $id = $_SESSION['id'];
                         </div>
 
                         <div class="form-row">
+                        <select id="select1" name="select1">
+                            <option>Select Venues</option>
+                            <option value="lapangan1">Lapangan 1</option>
+                            <option value="lapangan2">Lapangan 2</option>
+                            <option value="lapangan3">Lapangan 3</option>
+                            <option value="lapangan4">Lapangan 4</option>
+                        </select>
+                        <!-- <input type="submit" id="btncek" value="Price Cek" onclick="cek()"> -->
+                    </div>
+
+                        <div class="form-row">
                             <input name="jam" type="number" placeholder="Time playing? (in hours)" min="1">
 
                         </div>

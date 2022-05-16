@@ -75,7 +75,7 @@ include "php/connect.php";
             <h1>SportVenue</h1>
             <div class="container">
                 <?php
-                $query = "select * from tempat Limit 3";
+                $query = "select * from tempat Limit 6";
                 $result = mysqli_query($connect, $query);
                 if (mysqli_num_rows($result) == 0) {
                 ?>
