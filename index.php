@@ -120,7 +120,7 @@ include "php/connect.php";
                             </p>
                             <div class="btns">
                                 <button onclick="window.location.href='Pages/DetailVenue/index.php?uid=<?php echo $row['tempat_id'] ?>';">Lihat Detail</button>
-                                <button onclick="document.location='Pages/Booking/index.php'">Booking</button>
+                                <button onclick="window.location.href='Pages/Booking/index.php?uid=<?php echo $row['tempat_id'] ?>';">Booking</button>
                             </div>
                         </div>
                 <?php
