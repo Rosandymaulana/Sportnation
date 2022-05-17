@@ -22,23 +22,24 @@ $id = $_SESSION['id'];
                 <img src="../../images/Pembayaran-Image-1.png" alt="">
         <?php
                 $book_id = $_GET['uid'];
-                echo "$book_id";
-                    $query = "select * from booking b where book_id = '$book_id'";
+                    $query = "select *, addtime(sec_to_time(durasi*3600), jam) as jum 
+                    from booking b, lapangan l, user u where b.nomor = '$book_id' and b.user_id = u.user_id and b.lap_id = l.lap_id";
                     $result = mysqli_query($connect, $query);
                     while ($row = mysqli_fetch_assoc($result)) {
                         $jam_mulai = $row['jam'];
                         $durasi = $row['durasi'];
-                        $jam_berakhir = date('h a', strtotime("$durasi:00:00"))+$jam_mulai;
-                ?>
+                        $jam_berakhir = $row['jum'];
+                        $nama_lap = preg_replace("/[^0-9]/","",$row['lap_id']);
+                        ?>
                 <div class="data">
                     <table class="infoTempat">
                         <tr>
                             <td>No. Booking</td>
-                            <td><?php echo "$book_id" ?></td>
+                            <td><?php echo $book_id ?></td>
                         </tr>
                         <tr>
                             <td>Lapangan</td>
-                            <td><?php echo $row['lap_id'] ?></td>
+                            <td><?php echo $nama_lap ?></td>
                         </tr>
                     </table>
 
@@ -58,9 +59,6 @@ $id = $_SESSION['id'];
                     </table>
 
                 </div>
-        <?php
-            }
-        ?>
                 <figure>
                     <img src="../../images/Pembayaran-MetodePembayaran.png" alt="">
                     <div class="metode">
@@ -76,11 +74,6 @@ $id = $_SESSION['id'];
             </section>
             <section class="right">
                 <h4>Penyewa</h4>
-                    <?php
-                    $query = "select * from user u where user_id = '$id'";
-            $result = mysqli_query($connect, $query);
-            while ($row = mysqli_fetch_assoc($result)) {
-                ?>
                 <section class="myacount">
                     <figure>
                         <img src="../../images/PembayaranAcount.png" alt="">
@@ -95,16 +88,8 @@ $id = $_SESSION['id'];
                         <h1 class="telp"><?php echo $row['no_telp'] ?></h1>
                     </article>
                 </section>
-                <?php
-            }
-                ?>
                 <section class="tagihan">
                     <h4>Tagihan</h4>
-                    <?php
-                    $query = "select * from lapangan l,  where lap_id = '$book_id'";
-            $result = mysqli_query($connect, $query);
-            while ($row = mysqli_fetch_assoc($result)) {
-                ?>
                     <article class="harga">
                         <table>
                             <tr>
@@ -114,9 +99,6 @@ $id = $_SESSION['id'];
                             </tr>
                         </table>
                     </article>
-                    <?php
-            }
-                    ?>
                     <article class="total">
                         <table>
                             <tr>
@@ -139,9 +121,13 @@ $id = $_SESSION['id'];
                     <article class="totalKeseluruhan">
                         <h1><?php echo $row['total'] ?></h1>
                     </article>
+                    
+                        <?php
+            }
+        ?>
                     <div class="pickButton">
                         <a href="../../index.php" class="btnBatalkan"></i>Batalkan</a>
-                        <a href="" class="btnKonfirmasi">Konfirmasi</a>
+                        <a href="../../php/pembayaran.php" class="btnKonfirmasi">Konfirmasi</a>
                     </div>
                 </section>
             </section>
