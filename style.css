@@ -1,20 +1,20 @@
 /* ===== Google Font Import - Poppins ===== */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100&display=swap");
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   transition: all 0.4s ease;
 }
 
 /* ===== Colours ===== */
 :root {
-  --body-color: #E4E9F7;
+  --body-color: #e4e9f7;
   --nav-color: #ffffff;
   --side-nav: #ffffff;
-  --text-color: #2F4F4F;
+  --text-color: #2f4f4f;
   --side-text-color: #000000;
   --heading-font: 2rem;
 }
@@ -87,7 +87,7 @@ nav .nav-bar .logo a {
 }
 
 .nav-links li a::before {
-  content: '';
+  content: "";
   position: absolute;
   left: 50%;
   bottom: 0;
@@ -100,17 +100,16 @@ nav .nav-bar .logo a {
   transition: all 0.3s ease;
 }
 
-
 /* Button */
 a.login,
 .register {
   display: inline-block;
   padding: 0.3em 1.2em;
   border: 0.16em solid rgba(119, 8, 8, 0);
-  border-radius: .625rem;
+  border-radius: 0.625rem;
   text-decoration: none;
   font-weight: 300;
-  color: #FFFFFF;
+  color: #ffffff;
   text-shadow: 0 0.04em 0.04em rgba(23, 192, 136, 0.35);
   text-align: center;
   transition: all 0.2s;
@@ -185,10 +184,10 @@ a.cta {
   display: inline-block;
   padding: 0.3em 1.2em;
   border: 0.16em solid rgba(119, 8, 8, 0);
-  border-radius: .625rem;
+  border-radius: 0.625rem;
   text-decoration: none;
   font-weight: 300;
-  color: #FFFFFF;
+  color: #ffffff;
   text-shadow: 0 0.04em 0.04em rgba(23, 192, 136, 0.35);
   text-align: center;
   transition: all 0.2s;
@@ -211,8 +210,8 @@ a.cta {
 .card .main-images img {
   object-fit: cover;
   height: 12.3rem;
-  border-radius: .5rem;
-  margin-top: .8rem;
+  border-radius: 0.5rem;
+  margin-top: 0.8rem;
 }
 
 .card .details .shoe_name {
@@ -255,12 +254,13 @@ a.cta {
   align-items: center;
   padding: 20px 30px;
   border-radius: 5px;
+  margin-bottom: 20px;
 }
 
 .box .quote i {
   margin-top: 10px;
   font-size: 45px;
-  color: #17c0eb
+  color: #17c0eb;
 }
 
 .container .box .image {
@@ -356,9 +356,9 @@ a.cta {
   height: 100%;
   width: 300%;
   left: -100%;
-  background-image: linear-gradient(135deg, #9708CC, #43CBFF, #9708CC, #43CBFF);
+  background-image: linear-gradient(135deg, #9708cc, #43cbff, #9708cc, #43cbff);
   transition: all 0.4s ease;
-  border-radius: 25PX;
+  border-radius: 25px;
 }
 
 .card .button:hover .button-layer {
@@ -413,7 +413,7 @@ ul {
 }
 
 .footer-col h4::before {
-  content: '';
+  content: "";
   position: absolute;
   left: 0;
   bottom: -10px;
@@ -511,7 +511,6 @@ ul {
     display: block;
     margin-top: 20px;
   }
-
 }
 
 /* Responsive */
@@ -550,16 +549,13 @@ ul {
   }
 
   .foot {
-    color: #0071C7;
+    color: #0071c7;
     background-color: #242526;
   }
 }
 
-
-
 /* Responsive */
 @media only screen and (max-width: 1000px) {
-
   .about-me figure img {
     display: none;
   }
@@ -607,26 +603,23 @@ ul {
   }
 
   .foot {
-    color: #0071C7;
+    color: #0071c7;
     background-color: #242526;
   }
 }
 
 /* Responsive Footer */
-@media(max-width: 780px) {
-
+@media (max-width: 780px) {
   .hero-section .right img {
     display: none;
   }
-
-
 
   .container .box {
     width: 100%;
   }
 
   .footer-col {
-    color: #0071C7;
+    color: #0071c7;
   }
 
   /* 780 - 820 */
@@ -650,12 +643,11 @@ ul {
     font-size: 16px;
     line-height: 200%;
   }
-
 }
 
-@media(max-width: 574px) {
+@media (max-width: 574px) {
   .footer-col {
     width: 100%;
-    color: #0071C7;
+    color: #0071c7;
   }
 }

@@ -11,7 +11,7 @@
 
         <div class="menu">
             <div class="logo-toggle">
-                <span class="logo"><a href="#">Sportnation</a></span>
+                <span class="logo"><a href="/Sportnation.fork/index.php">Sportnation</a></span>
                 <i class='bx bx-x siderbarClose'></i>
             </div>
 

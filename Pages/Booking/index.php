@@ -25,7 +25,7 @@ $id = $_SESSION['id'];
 
             <div class="card-content">
                 <h3>Reservation</h3>
-                <form  id="form1" name="form1" action="../../php/booking.php" method="get">
+                <form  id="form-booking" name="form1" action="../../php/booking.php" method="get">
                     <?php
                   
                     $query = "Select * from user where user_id = '$id'";
@@ -41,6 +41,17 @@ $id = $_SESSION['id'];
                             <input name="name" value="<?php echo $row['nama'] ?>" type="text" placeholder="Full Name">
                             <input name="phone" value="<?php echo $row['no_telp'] ?>" type="text" placeholder="Phone Number">
                         </div>
+
+                        <div class="form-row">
+                        <select id="select1" name="select1">
+                            <option>Select Venues</option>
+                            <option value="lapangan1">Lapangan 1</option>
+                            <option value="lapangan2">Lapangan 2</option>
+                            <option value="lapangan3">Lapangan 3</option>
+                            <option value="lapangan4">Lapangan 4</option>
+                        </select>
+                        <!-- <input type="submit" id="btncek" value="Price Cek" onclick="cek()"> -->
+                    </div>
 
                         <div class="form-row">
                             <input name="jam" type="number" placeholder="Time playing? (in hours)" min="1">

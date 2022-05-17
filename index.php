@@ -75,7 +75,7 @@ include "php/connect.php";
             <h1>SportVenue</h1>
             <div class="container">
                 <?php
-                $query = "select * from tempat Limit 3";
+                $query = "select * from tempat Limit 6";
                 $result = mysqli_query($connect, $query);
                 if (mysqli_num_rows($result) == 0) {
                 ?>
@@ -104,7 +104,7 @@ include "php/connect.php";
                 } else {
                     while ($row = mysqli_fetch_assoc($result)) {
                     ?>
-                        <div class="box">
+                        <div class="box" box_id="<?php $row['tempat_id']?>">
                             <div class="image">
                                 <img src="<?php echo $row['foto_tempat'] ?>">
                             </div>
@@ -119,7 +119,7 @@ include "php/connect.php";
                             <p> <?php echo $row['fasilitas'] ?>
                             </p>
                             <div class="btns">
-                                <button>Lihat Detail</button>
+                                <button onclick="window.location.href='Pages/DetailVenue/index.php?uid=<?php echo $row['tempat_id'] ?>';">Lihat Detail</button>
                                 <button onclick="document.location='Pages/Booking/index.php'">Booking</button>
                             </div>
                         </div>

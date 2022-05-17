@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<?php
+session_start();
+include "../../php/connect.php";
+?>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,32 +11,38 @@
     <title>Detail Venue</title>
 
     <!-- CSS -->
-    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="index.css">
 
 </head>
 
 <body>
-    <a href="/index.php" style="font-size: 26px; padding: 20px; font-weight: bold;">
-        < </a>
+    <a href="/index.php" style="font-size: 26px; padding: 20px; font-weight: bold;"></a>
 
+    <?php
+    $tempat_id = $_GET["uid"];
+                $query = "SELECT *, count(l.lap_id) jumlah_lap from tempat t, pemilik p, lapangan l 
+                        WHERE t.owner_id = p.owner_id and t.tempat_id = '$tempat_id' and t.tempat_id = l.tempat_id";
+                $result = mysqli_query($connect, $query);
+                while ($row = mysqli_fetch_assoc($result)) {
+                    ?>
             <div class="wrap">
                 <div id="content">
                     <center>
-                        <img src="/images/DetailSport-img1.jpeg" width="80%">
+                        <img src="<?php echo $row['foto_tempat']?>" width="80%">
+                        <h1><?php echo $row['nama_tempat'] ?></h1>
                     </center>
-                    <h1>Olahraga itu sehat, ojo rebahan ae lor!!!</h1>
 
                 </div>
                 <aside>
                     <div class="wrap">
                         <div class="flex" style="width: 15%; padding: 5px;">
-                            <img src="/images/DetailSport-IconUser.jpeg" width="100%">
+                            <img src="<?php echo $row['foto_owner'] ?>" width="100%">
                         </div>
                         <div class="flex" style="width: 80%; padding: 5px;">
-                            Maulana Rosandy <br> <strong> Master Room </strong> <br> + 62 167 4541 6781
+                            <?php echo $row['nama_owner'] ?> <br> <strong> Pemilik Tempat </strong> <br> <?php echo $row['email'] ?>
                         </div>
                     </div>
-                    <h1>Detail Room</h1>
+                    <h1>Detail Venue</h1>
                     <div class="wrap">
                         <div class="flex" style="width: 15%; padding: 27px 0 0 25px;">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -45,8 +54,8 @@
                             </svg>
                         </div>
                         <div class="flex" style="width: 100%; padding: 5px;">
-                            <h4>Jenis Olahraga</h3>
-                                <p style="color: gray;">Sepak Bola</p>
+                            <h4>Nama</h3>
+                                <p style="color: gray;"><?php echo $row['nama_tempat'] ?></p>
                         </div>
                     </div>
                     <div class="wrap">
@@ -60,8 +69,8 @@
                             </svg>
                         </div>
                         <div class="flex" style="width: 100%; padding: 5px;">
-                            <h4>Berakhir</h3>
-                                <p style="color: gray;">Kamis, 24 Maret 2022. 15 : 00</p>
+                            <h4>Buka</h3>
+                                <p style="color: gray;"><?php echo $row['buka'], " - ", $row['tutup']  ?></p>
                         </div>
                     </div>
                     <div class="wrap">
@@ -72,18 +81,20 @@
                             </svg>
                         </div>
                         <div class="flex" style="width: 100%; padding: 5px;">
-                            <h4>Kuota Tersisa</h3>
-                                <p style="color: gray;">3 Orang</p>
+                            <h4>Banyak Lapangan</h3>
+                                <p style="color: gray;"><?php echo $row['jumlah_lap'] ?></p>
                         </div>
                     </div>
-                    <h4>Status Room</h4>
-                    <p style="color: gray;">Akan dimulai</p>
-                    <h4>Pembayaran</h4>
-                    <p style="color: gray;">Belum Lunas</p>
-                    <h4>Tagihan</h4>
+                    <h4>Alamat</h4>
+                <p style="color: gray;"><?php echo $row['alamat'] ?></p>
+                    <h4>Nomor Telphon</h4>
+                    <p style="color: gray;"><?php echo $row['no_telp'] ?></p>
+                    <h4>Fasilitas</h4>
+                    <p style="color: gray;"><?php echo $row['fasilitas'] ?></p>
+                    <h4>Rata-rata Harga</h4>
                     <ul>
                         <li>
-                            <p style="color: gray;">Rp 15.000</p>
+                            <p style="color: gray;"><?php echo $row['harga'] ?></p>
                         </li>
                     </ul>
 
@@ -91,20 +102,23 @@
 
                         <div class="flex">
                             <div class="btn" style="background-color: darkslategray;">
-                                <a href="#" style="color: white;">Pay Now</a>
+                                <a onclick="" style="color: white;">Pesan Sekarang</a>
                             </div>
                         </div>
 
-                        <div class="flex">
+                        <!-- <div class="flex">
                             <div class="btn" style="background-color: white;">
                                 <a href="/index.php" style="color: darkslategray;">Cancel</a>
                             </div>
-                        </div>
+                        </div> -->
 
                     </div>
 
                 </aside>
             </div>
+            <?php
+                }
+            ?>
 </body>
 
 </html>
