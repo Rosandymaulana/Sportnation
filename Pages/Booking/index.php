@@ -4,6 +4,7 @@
 session_start();
 include "../../php/connect.php";
 $id = $_SESSION['id'];
+$temp_id = $_GET['uid'];
 ?>
 
 <head>
@@ -31,27 +32,38 @@ $id = $_SESSION['id'];
                     $query = "Select * from user where user_id = '$id'";
                     $result = mysqli_query($connect, $query);
                     while ($row = mysqli_fetch_array($result)) {
-                    ?>
+                        ?>
                         <div class="form-row">
                             <input name="date" type="date" placeholder="Choose Date" required>
                             <input name="time" type="time" placeholder="Set Time" min="09:00" max="18:00" required>
                         </div>
-
+                        
                         <div class="form-row">
                             <input name="name" value="<?php echo $row['nama'] ?>" type="text" placeholder="Full Name">
                             <input name="phone" value="<?php echo $row['no_telp'] ?>" type="text" placeholder="Phone Number">
-                        </div>
-
+                            </div>
+                            <?php
+                        }
+                    ?>
                         <div class="form-row">
-                        <select id="select1" name="select1">
-                            <option>Select Venues</option>
-                            <option value="lapangan1">Lapangan 1</option>
-                            <option value="lapangan2">Lapangan 2</option>
-                            <option value="lapangan3">Lapangan 3</option>
-                            <option value="lapangan4">Lapangan 4</option>
-                        </select>
+                            <select id="lapangan" name="lapangan">
+                                <option>Pilih Lapangan</option>
+                                <?php
+                                $sql = "Select lap_id from lapangan where tempat_id = '$temp_id'";
+                                $result1 = mysqli_query($connect, $sql);
+                                while ($row = mysqli_fetch_array($result1)) {
+                                    $nama_lap = preg_replace("/[^0-9]/","",$row['lap_id']);
+                                ?>
+                                <option value="<?php echo $row['lap_id'] ?>">Lapangan <?php echo $nama_lap ?></option>
+                                <!-- <option value="lapangan2">Lapangan 2</option>
+                                <option value="lapangan3">Lapangan 3</option>
+                                <option value="lapangan4">Lapangan 4</option> -->
+                                <?php
+                            }
+                        ?>
+                            </select>
                         <!-- <input type="submit" id="btncek" value="Price Cek" onclick="cek()"> -->
-                    </div>
+                        </div>
 
                         <div class="form-row">
                             <input name="jam" type="number" placeholder="Time playing? (in hours)" min="1">
@@ -61,9 +73,6 @@ $id = $_SESSION['id'];
                             <input type="submit" value="Book Now">
                         </div>
 
-                    <?php
-                    }
-                    ?>
             </div>
         </div>
     </section>

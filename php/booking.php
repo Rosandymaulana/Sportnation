@@ -6,6 +6,13 @@ $user_id = $_SESSION['id'];
 $jam = $_GET['jam'];
 $date = $_GET['date'];
 $time = $_GET['time'];
+$lapangan = $_GET['lapangan'];
+
+//Menghitung total
+$sql = "SELECT harga FROM lapangan where lap_id = '$lapangan'";
+$result = mysqli_query($connect, $sql);
+$row = mysqli_fetch_array($result);
+$total = $row['harga'] * $jam;
 
 $query = "SELECT nomor FROM booking ORDER BY nomor DESC LIMIT 1";
 $nomor = mysqli_query($connect, $query);
@@ -16,14 +23,14 @@ if($nomor > 0) {
     $nomorInt = 1;
 }
 
-$query = "INSERT INTO booking (book_id, nomor, user_id, durasi, tgl, jam)
+$query = "INSERT INTO booking (book_id, nomor, user_id, lap_id, durasi, total, tgl, jam)
             VALUES
-                ('B-0$nomorInt', '$nomorInt', '$user_id', '$jam', '$date', '$time')
+                ('B-0$nomorInt', '$nomorInt', '$user_id', '$lapangan', '$jam', '$total', '$date', '$time')
          ";
 
          mysqli_query($connect, $query);
          
-echo "<script>window.location.href='../Pages/Pembayaran/index.php?uid=$nomorint'</script>"
+echo "<script>window.location.href='../Pages/Pembayaran/index.php?uid=$nomorInt'</script>"
 
     // if(mysqli_query($connect, $query)){
     //     echo "<script> 
