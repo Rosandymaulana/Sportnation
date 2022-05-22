@@ -3,7 +3,6 @@
 <?php
 session_start();
 include "../../php/connect.php";
-$id = $_SESSION['id'];
 $temp_id = $_GET['uid'];
 ?>
 
@@ -16,7 +15,10 @@ $temp_id = $_GET['uid'];
     <link rel="stylesheet" href="cek.js">
 
 <body>
-
+    <?php
+    if(isset($_SESSION['status'])){
+    $id = $_SESSION['id'];
+    ?>
     <section class="banner">
         <h1>BOOK YOUR SPORT ARENA NOW!</h1>
         <div class="card-container">
@@ -76,7 +78,13 @@ $temp_id = $_GET['uid'];
             </div>
         </div>
     </section>
-
+    <?php
+    }else{
+        echo '<script type ="text/JavaScript">';  
+        echo 'alert("Silahkan login terlebih dahulu");location="../Login/index.html";';
+        echo '</script>';
+    }
+    ?>
 </body>
 
 </html>
