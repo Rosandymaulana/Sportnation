@@ -13,10 +13,27 @@ $temp_id = $_GET['uid'];
     <title>Booking Form</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="booking.css">
-    <link rel="stylesheet" href="cek.js">
 
+    <script type="text/javascript">
+        function showTotal() {
+            var durasi = parseInt(document.getElementById("durasi").value);
+            var x = document.getElementById("lapangan").value;
+            var harga_lapangan = function(x) {
+                                    if(x == "L-01") {
+                                        return harga_lapangan = 70000;
+                                    } else if(x == "L-02"){
+                                        return harga_lapangan = 80000;
+                                    } else if(x == "L-03"){
+                                        return harga_lapangan = 60000;
+                                    } else {
+                                        return harga_lapangan = 80000;
+                                    }
+                                 };
+            document.getElementById("total").innerHTML = "Total: Rp. " + (durasi * harga_lapangan(x));
+        }
+    </script>
+</head>
 <body>
-
     <section class="banner">
         <h1>BOOK YOUR SPORT ARENA NOW!</h1>
         <div class="card-container">
@@ -46,7 +63,7 @@ $temp_id = $_GET['uid'];
                         }
                     ?>
                         <div class="form-row">
-                            <select id="lapangan" name="lapangan">
+                            <select name="lapangan" id="lapangan">
                                 <option>Pilih Lapangan</option>
                                 <?php
                                 $sql = "Select lap_id from lapangan where tempat_id = '$temp_id'";
@@ -55,28 +72,22 @@ $temp_id = $_GET['uid'];
                                     $nama_lap = preg_replace("/[^0-9]/","",$row['lap_id']);
                                 ?>
                                 <option value="<?php echo $row['lap_id'] ?>">Lapangan <?php echo $nama_lap ?></option>
-                                <!-- <option value="lapangan2">Lapangan 2</option>
-                                <option value="lapangan3">Lapangan 3</option>
-                                <option value="lapangan4">Lapangan 4</option> -->
                                 <?php
                             }
                         ?>
                             </select>
-                        <!-- <input type="submit" id="btncek" value="Price Cek" onclick="cek()"> -->
                         </div>
-
                         <div class="form-row">
-                            <input name="jam" type="number" placeholder="Time playing? (in hours)" min="1">
-
+                            <input type="number" id="durasi" placeholder="Time playing? (in hours)" oninput="showTotal()">
                         </div>
-                        <div class="form-row center">
+                        <div class="form-row">
+                            <p id="total" style="margin-left: 20px; margin-bottom: 20px; margin-top: 20px">Total: Rp. </p>
+                        </div>
+                        <div class="form-row">
                             <input type="submit" value="Book Now">
                         </div>
-
             </div>
         </div>
     </section>
-
 </body>
-
 </html>
