@@ -2,39 +2,45 @@
 include 'connect.php';
 session_start();
 
-$date = $_GET['date'];
-$name = $_GET['name'];
-$time = $_GET['time'];
-$jam = $_GET['jam'];
-$time = $_GET['time'];
 $user_id = $_SESSION['id'];
-$id = "set @nomor_user = (select nomor from user where user_id = '$user_id');";
-$nomor = "set @nomor = (select nomor from booking order by nomor desc);";
+$jam = $_GET['jam'];
+$date = $_GET['date'];
+$time = $_GET['time'];
+$lapangan = $_GET['lapangan'];
 
-// /*Percobaan Query*\
-// (book_id, nomor, user_id, lap_id, durasi, total, tgl, jam) 
-// values ('B-(@nomor+1)', '', '@nomor_user', 'L-01', '$jam', '50000', '$date', '$time')
-// set book_id = 'B-($nomor+1)',
-// set nomor = '',
-// set user_id = '$id',
-// set lap_id = 'L-01',
-// set durasi = '$jam',
-// set total = '75000',
-// set tgl = '$date',
-// set jam = '$time' ;
+//Menghitung total
+$sql = "SELECT harga FROM lapangan where lap_id = '$lapangan'";
+$result = mysqli_query($connect, $sql);
+$row = mysqli_fetch_array($result);
+$total = $row['harga'] * $jam;
 
-    $query = "insert into booking (book_id, nomor, user_id, lap_id, durasi, total, tgl, jam)
-    select
-    ";
-    if(mysqli_query($connect, $query)){
-        echo "<script> 
-            alert('Anda berhasil Booking !');
-            document.location.href = '../index.php';
-        </script>";
-}else{
-    echo "<script> 
-            alert('Proses booking gagal ditambahkan. Silahkan coba lagi');
-            document.location.href = '../Pages/Booking/index.php';
-        </script> <br>";
+$query = "SELECT nomor FROM booking ORDER BY nomor DESC LIMIT 1";
+$nomor = mysqli_query($connect, $query);
+$nomor = $nomor->fetch_array();
+if($nomor > 0) {
+    $nomorInt = intval($nomor[0]) + 1;
+} else {
+    $nomorInt = 1;
 }
+
+$query = "INSERT INTO booking (book_id, nomor, user_id, lap_id, durasi, total, tgl, jam)
+            VALUES
+                ('B-0$nomorInt', '$nomorInt', '$user_id', '$lapangan', '$jam', '$total', '$date', '$time')
+         ";
+
+         mysqli_query($connect, $query);
+         
+echo "<script>window.location.href='../Pages/Pembayaran/index.php?uid=$nomorInt'</script>"
+
+    // if(mysqli_query($connect, $query)){
+    //     echo "<script> 
+    //         alert('Anda berhasil Booking !');
+    //         document.location.href = '../index.php';
+    //     </>";
+    // }else{
+    //     echo "<script> 
+    //         alert('Proses booking gagal ditambahkan. Silahkan coba lagi');
+    //         document.location.href = '../Pages/Booking/index.php';
+    //     </script> <br>";
+    // }
 ?>
