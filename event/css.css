@@ -1,0 +1,31 @@
+a {
+    text-decoration: none;
+}
+
+.disp {
+    display: flex;
+}
+
+.flex {
+    flex-grow: 1;
+}
+
+.card {
+    padding: 10px;
+    border-radius: 6px;
+    box-shadow: 4px 4px 4px gray;
+}
+
+a {
+    text-decoration: none;
+    text-align: center;
+}
+
+.btn {
+    padding: 5px 10px;
+    background-color: royalblue;
+}
+
+.wrap {
+    margin: 10px 50px;
+}
