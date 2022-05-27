@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <title> Responsive FAQ Accordion | CodingLab </title>
+    <link rel="stylesheet" href="../FaQ/style.css">
+    <!-- Boxicons CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+  <div class="accordion">
+    <div class="image-box">
+      <img src="images/q2.jpg" alt="">
+    </div>
+    <div class="accordion-text">
+      <div class="title">FAQ</div>
+    <ul class="faq-text">
+      <li>
+        <div class="question-arrow">
+          <span class="question">Apakah bisa melakukan pemesanan tanpa menggunakan no. hp?</span>
+          <i class="bx bxs-chevron-down arrow"></i>
+        </div>
+        <p>Tidak bisa, pemesanan harus menggunakan no hp yang masih aktif, 
+          karena bukti pemesanan akan dikirim dari sistem kami ke no. hp kamu.</p>
+        <span class="line"></span>
+      </li>
+      <li>
+        <div class="question-arrow">
+          <span class="question">Platform apa saja yang dapat digunakan untuk melakukan pemesanan di Sportnation?</span>
+          <i class="bx bxs-chevron-down arrow"></i>
+        </div>
+        <p>Kamu dapat melakukan pemesanan tempat secara Online di Sportnation yang hanya bisa diakses melalui website.</p>
+        <span class="line"></span>
+      </li>
+      <li>
+        <div class="question-arrow">
+          <span class="question">Metode pembayaran apa saja yang tersedia Sportnation?</span>
+          <i class="bx bxs-chevron-down arrow"></i>
+        </div>
+        <p>Sportnation menyediakan banyak platform pembayaran untuk memudahkan kamu bertransaksi, diantaranya 
+          Kartu Kredit, Kartu Debit, ATM, Transfer Online, Virtual Account</p>
+        <span class="line"></span>
+      </li>
+      <li>
+        <div class="question-arrow">
+          <span class="question">Bagaimana cara melakukan pemesanan tempat di Sportnation?</span>
+          <i class="bx bxs-chevron-down arrow"></i>
+        </div>
+        <p>Kamu bisa melihat cara untuk melakukan pemesanan tempat di Sportnation dengan klik tautan berikut
+          <u>bit.ly/CaraPesanLapangan</u>
+        </p>
+        <span class="line"></span>
+      </li>
+    </ul>
+    </div>
+  </div>
+
+
+  <script>
+    let li = document.querySelectorAll(".faq-text li");
+    for (var i = 0; i < li.length; i++) {
+      li[i].addEventListener("click", (e)=>{
+        let clickedLi;
+        if(e.target.classList.contains("question-arrow")){
+          clickedLi = e.target.parentElement;
+        }else{
+          clickedLi = e.target.parentElement.parentElement;
+        }
+       clickedLi.classList.toggle("showAnswer");
+      });
+    }
+  </script>
+</body>
+</html>
