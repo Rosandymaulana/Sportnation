@@ -45,6 +45,27 @@ include "php/connect.php";
 
         </div>
 
+        <section class="steps">
+            <div class="card">
+                <img src="./images/tabs.png" alt="" width="25">
+                <p>Step 01</p>
+                <h4>Menyusun Jadwal </h4>
+                <img src="./images/line.png" alt="">
+            </div>
+            <div class="card">
+                <img src="./images/tabs.png" alt="" width="25">
+                <p>Step 02</p>
+                <h4>Meningkatkan Kegiatan</h4>
+                <img src="./images/line.png" alt="">
+            </div>
+            <div class="card">
+                <img src="./images/tabs.png" alt="" width="25">
+                <p>Step 03</p>
+                <h4>Lihat Perkembangan</h4>
+                <img src="./images/line.png" alt="">
+            </div>
+        </section>
+
         <div class="" id="about">
             <section class="about" id="about">
                 <?php
@@ -70,6 +91,17 @@ include "php/connect.php";
                 ?>
             </section>
         </div>
+
+        <!-- <section class="discover">
+            <img src="./images/volley.jpg" alt="">
+            <div class="card" style="width: 40%;">
+                <h1>Discover Elite Celebrity Workouts</h1>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia mollitia illum, quisquam suscipit asperiores
+                    dolorem reiciendis quasi ducimus officiis itaque repellendus quis quae consequuntur, voluptates fugit? Ipsum
+                    officiis soluta numquam.</p>
+                <a href="#" class="btn" style="color: white;">Get Access</a>
+            </div>
+        </section> -->
 
         <div class="sportvenue" id="sportvenue">
             <h1>SportVenue</h1>
@@ -104,7 +136,7 @@ include "php/connect.php";
                 } else {
                     while ($row = mysqli_fetch_assoc($result)) {
                     ?>
-                        <div class="box" box_id="<?php $row['tempat_id']?>">
+                        <div class="box" box_id="<?php $row['tempat_id'] ?>">
                             <div class="image">
                                 <img src="<?php echo $row['foto_tempat'] ?>">
                             </div>
@@ -129,6 +161,53 @@ include "php/connect.php";
                 ?>
             </div>
         </div>
+
+        <div class="disp">
+            <center>
+                <h1>Event of the month</h1>
+                <p>You can join even and enjoy the fun</p>
+            </center>
+            <div class="wrap">
+                <div class="image" style="padding: 30px;">
+                    <img src="football.jpg" alt="" width="400" height="300">
+                </div>
+                <div class="flex" style="padding: 30px;">
+                    <h1>Football Clinic</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, magni non! Dicta placeat beatae
+                        exercitationem tempore, veniam quasi iusto sed esse dolores tenetur sint perferendis, commodi harum
+                        officiis eos dolorum.</p>
+                    <span><img src="./images/ic-tropy.png" alt="" style="width: 40px; padding-top: 1rem;"></span><strong>1.500.000</strong>
+                    <br><br><img src="./images/ic-location.png" alt="" style="width: 18px;"><a href="#">View Location</a>
+                    <br><br> <strong>Learn More --></strong>
+                </div>
+            </div>
+        </div>
+
+        <div class="feature">
+            <center>
+                <h1>Featured program of the month</h1>
+                <p>Featured program of the month</p>
+            </center>
+            <div class="wrap">
+                <div class="feat-1">
+                    <img src="./images/about.jpg" alt="">
+                    <div class="description">
+                        <h4>7 Days to Shrink Belly and Thigts with Aerobics!</h4>
+                        <br>
+                        <p>Learn More --></p>
+                    </div>
+                </div>
+                <div class="feat-1">
+                    <img src="./images/about.jpg" alt="">
+                    <div class="description">
+                        <h4>Burn belly fat by lying down, without using tools</h4>
+                        <br>
+                        <p>Learn More --></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </main>
 
     <?php

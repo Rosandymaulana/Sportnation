@@ -16,7 +16,7 @@
             </div>
 
             <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
+                <li><a href="../../../index.php">Home</a></li>
                 <li><a href="#sportvenue">SportVenue</a></li>
                 <li><a href="#content">Content</a></li>
                 <!-- <li><a href="#rooms">Rooms</a></li> -->
