@@ -46,7 +46,7 @@ include "../../php/connect.php";
             </p>
           </div>
         </div>
-        <div class="column">
+        <div class="column" onclick="location.href='../FaQ/index.html';">
           <div class="card">
             <div class="icon-wrapper">
               <i class="fa-solid fa-question"></i>
