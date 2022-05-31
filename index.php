@@ -68,27 +68,14 @@ include "php/connect.php";
 
         <div class="" id="about">
             <section class="about" id="about">
-                <?php
-                $query = "Select * from event limit 1";
-                $result = mysqli_query($connect, $query);
-                if (mysqli_num_rows($result) == 0) {
-                ?>
-                    <h1>Tidak ada event</h1>
-                    <?php
-                } else {
-                    while ($row = mysqli_fetch_assoc($result)) {
-                    ?>
-                        <h1><?php echo $row['judul'] ?></h1>
+                
+                        <h1>About</h1>
                         <div class="about-me">
                             <figure>
-                                <img src="<?php echo $row['foto'] ?>" alt="">
+                                <img src="" alt="">
                             </figure>
-                            <p><?php echo $row['deskripsi'] ?></p>
+                            <p>Deskripsi</p>
                         </div>
-                <?php
-                    }
-                }
-                ?>
             </section>
         </div>
 
@@ -167,20 +154,43 @@ include "php/connect.php";
                 <h1>Event of the month</h1>
                 <p>You can join even and enjoy the fun</p>
             </center>
+            <?php
+                $query = "select * from event Limit 3";
+                $result = mysqli_query($connect, $query);
+                if (mysqli_num_rows($result) == 0) {
+                ?>
             <div class="wrap">
                 <div class="image" style="padding: 30px;">
                     <img src="football.jpg" alt="" width="400" height="300">
                 </div>
                 <div class="flex" style="padding: 30px;">
-                    <h1>Football Clinic</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, magni non! Dicta placeat beatae
-                        exercitationem tempore, veniam quasi iusto sed esse dolores tenetur sint perferendis, commodi harum
-                        officiis eos dolorum.</p>
-                    <span><img src="./images/ic-tropy.png" alt="" style="width: 40px; padding-top: 1rem;"></span><strong>1.500.000</strong>
+                    <h1></h1>
+                    <p></p>
+                    <span><img src="./images/ic-tropy.png" alt="" style="width: 40px; padding-top: 1rem;"></span><strong></strong>
                     <br><br><img src="./images/ic-location.png" alt="" style="width: 18px;"><a href="#">View Location</a>
                     <br><br> <strong>Learn More --></strong>
                 </div>
             </div>
+            <?php
+                }else{
+                    while ($row = mysqli_fetch_assoc($result)) {
+                        ?>
+            <div class="wrap">
+                <div class="image" style="padding: 30px;">
+                    <img src="<?php echo $row['foto']?>" alt="" width="400" height="300">
+                </div>
+                <div class="flex" style="padding: 30px;">
+                    <h1><?php echo $row['judul']?></h1>
+                    <p><?php echo $row['deskripsi']?></p>
+                    <span><img src="./images/ic-tropy.png" alt="" style="width: 40px; padding-top: 1rem;"></span><strong><?php echo $row['htm']?></strong>
+                    <br><br><img src="./images/ic-location.png" alt="" style="width: 18px;"><a href="#">View Location</a>
+                    <br><br> <strong>Learn More --></strong>
+                </div>
+            </div>
+                    <?php
+                    }
+                }
+            ?>
         </div>
 
         <div class="feature">
@@ -192,7 +202,7 @@ include "php/connect.php";
                 <div class="feat-1">
                     <img src="./images/about.jpg" alt="">
                     <div class="description">
-                        <h4>7 Days to Shrink Belly and Thigts with Aerobics!</h4>
+                        <h4>7 Days to Shrink Belly and Tights with Aerobics!</h4>
                         <br>
                         <p>Learn More --></p>
                     </div>

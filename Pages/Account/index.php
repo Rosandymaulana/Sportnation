@@ -78,7 +78,7 @@ $id = $_SESSION['id'];
         ?>
         <div class="user-post">
           <div class="button">
-            <input type="submit" value="Discard Changes" id="discard">
+            <input type="button" onclick="history.back()" value="Discard Changes" id="discard">
           </div>
           <div class="button">
             <input type="submit" value="Save Changes" id="save">

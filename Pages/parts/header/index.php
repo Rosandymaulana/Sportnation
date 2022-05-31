@@ -11,14 +11,14 @@
 
         <div class="menu">
             <div class="logo-toggle">
-                <span class="logo"><a href="/Sportnation.fork/index.php">Sportnation</a></span>
+                <span class="logo"><a href="../../index.php">Sportnation</a></span>
                 <i class='bx bx-x siderbarClose'></i>
             </div>
 
             <ul class="nav-links">
-                <li><a href="../../../index.php">Home</a></li>
-                <li><a href="#sportvenue">SportVenue</a></li>
-                <li><a href="#content">Content</a></li>
+                <li><a href="../../index.php">Home</a></li>
+                <li><a href="../../index.php#sportvenue">SportVenue</a></li>
+                <li><a href="../../index.php#content">Content</a></li>
                 <!-- <li><a href="#rooms">Rooms</a></li> -->
                 <li><a href="Pages/Customer Service/index.php">Support</a></li>
                 <?php
