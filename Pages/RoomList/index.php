@@ -36,15 +36,15 @@ $id = $_SESSION['id'];
             SM Futsal
         </p>
         <p class="place">
-            <img src="../../images/ic-location.png" alt="">
+            <img src="../../images/ic-date.png" alt="">
             <?php echo $row['alamat']?>
         </p>
         <p class="place">
-            <img src="../../images/ic-location.png" alt="">
+            <img src="../../images/ic-homePlace.png" alt="">
             <?php echo $row['lap_id'] ?>
         </p>
         <p class="place">
-            <img src="../../images/ic-location.png" alt="">
+            <img src="../../images/ic-people.png" alt="">
             <?php echo $row['durasi'] ?>
         </p>
         <div class="info">
