@@ -10,6 +10,9 @@ body {
 }
 
 .card {
+    max-width: 80%;
+    margin: 0 auto;
+    margin-bottom: 5%;
     display: flex;
     gap: 5%;
     justify-content: center;
@@ -27,12 +30,15 @@ body {
 
 .box img {
     width: 350px;
+    height: 230px;
     border-radius: 5% 5% 0% 0%;
 }
 
 .box h5 {
     padding-left: 32px;
     font-size: 20px;
+    margin-top: 20px;
+    margin-bottom: 0px;
 }
 
 .box .description {
@@ -43,6 +49,12 @@ body {
     width: 14px;
     height: 14px;
     padding-left: 32px;
+    margin-right: 3%;
+}
+
+.box p.place {
+    font-size: 16px;
+    margin: 10px 0px;
 }
 
 .box .info {
@@ -56,9 +68,10 @@ body {
 }
 
 .box .info button {
-    border-radius: 5px;
+    border-radius: 8px;
     background-color: #397979;
     color: white;
+    letter-spacing: 0.1em;
     border: none;
     width: 120px;
     height: 40px;
