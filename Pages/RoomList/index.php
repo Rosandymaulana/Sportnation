@@ -24,7 +24,7 @@ $id = $_SESSION['id'];
             <?php
             $query = "Select * from booking b, lapangan l, tempat t where b.user_id = '$id' 
             and b.lap_id = l.lap_id and l.tempat_id = t.tempat_id
-            and tgl > curdate() order by b.tgl desc limit 6;";
+            and tgl >= curdate() order by b.tgl desc limit 6;";
                     $result = mysqli_query($connect, $query);
                     while ($row = mysqli_fetch_array($result)) {
             ?>

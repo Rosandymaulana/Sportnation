@@ -12,7 +12,7 @@ $c_password = md5($_GET['c_password']);
 session_start();
 $id = $_SESSION["id"];
 if ($password == $c_password) {
-    $sql = "UPDATE user SET nama = '$name', username = '$username', gender = '$gender', telp = '$phone', email = '$email', password = '$password'  WHERE user_id = '$id'";
+    $sql = "UPDATE user SET nama = '$name', username = '$username', jenis_kelamin = '$gender', no_telp = '$phone', email = '$email', password = '$password'  WHERE user_id = '$id'";
     if (mysqli_query($connect, $sql)) {
         echo "<script> 
             alert('Data Account berhasil diubah !');
