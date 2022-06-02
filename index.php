@@ -74,10 +74,9 @@ include "php/connect.php";
                             <figure>
                                 <img src="https://wallpaperaccess.com/full/378757.png" alt="">
                             </figure>
-                            <p>We served the best place to do Sports,
-                                With best price,
-                                best facility,
-                                best field, etc.
+                            <p>Sewa Lapangan dengan website Sportnation dapat membantu Anda melakukan penyewaan lapangan untuk melaksanakan Olahraga seperti Futsal dan sejenisnya dengan penggunaan website yang mudah dimengerti.
+                                <br>Anda dapat menyewa kapan saja dengan berbagai pilihan lapangan dan tempat, serta dapat memilih waktu yang diinginkan.
+                                <br>Olahraga sangat penting untuk menjaga kesehatan tubuh. Yuk, gunakan website Sportnation dan mulailah berolahraga bersama tim dan teman agar tubuh terasa lebih bugar.
                             </p>
                         </div>
             </section>
