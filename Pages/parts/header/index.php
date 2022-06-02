@@ -17,6 +17,7 @@
 
             <ul class="nav-links">
                 <li><a href="../../index.php">Home</a></li>
+                <li><a href="../../index.php#about-me">About</a></li>
                 <li><a href="../../index.php#sportvenue">SportVenue</a></li>
                 <li><a href="Pages/RoomList/">Booking List</a></li>
                 <!-- <li><a href="#rooms">Rooms</a></li> -->

@@ -66,15 +66,19 @@ include "php/connect.php";
             </div>
         </section>
 
-        <div class="" id="about">
+        <div class="about-me" id="about-me">
             <section class="about" id="about">
                 
                         <h1>About</h1>
                         <div class="about-me">
                             <figure>
-                                <img src="" alt="">
+                                <img src="https://wallpaperaccess.com/full/378757.png" alt="">
                             </figure>
-                            <p>Deskripsi</p>
+                            <p>We served the best place to do Sports,
+                                With best price,
+                                best facility,
+                                best field, etc.
+                            </p>
                         </div>
             </section>
         </div>
@@ -182,8 +186,8 @@ include "php/connect.php";
                 <div class="flex" style="padding: 30px;">
                     <h1><?php echo $row['judul']?></h1>
                     <p><?php echo $row['deskripsi']?></p>
-                    <span><img src="./images/ic-tropy.png" alt="" style="width: 40px; padding-top: 1rem;"></span><strong><?php echo $row['htm']?></strong>
-                    <br><br><img src="./images/ic-location.png" alt="" style="width: 18px;"><a href="#">View Location</a>
+                    <span><img src="./images/ic-tropy.png" alt="" style="width: 40px; padding-top: 1rem;"></span><strong>Rp. <?php echo $row['htm']?></strong>
+                    <br><br><img src="./images/ic-location.png" alt="" style="width: 18px;"><a href="https://goo.gl/maps/cV3QHDGReHJWturQ7">View Location</a>
                     <br><br> <strong>Learn More --></strong>
                 </div>
             </div>

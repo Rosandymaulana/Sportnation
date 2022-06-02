@@ -5,6 +5,7 @@
 session_start();
 include "../../php/connect.php";
 $id = $_SESSION['id'];
+$password = $_SESSION['password'];
 ?>
 
 <head>
@@ -27,27 +28,27 @@ $id = $_SESSION['id'];
           <div class="user-details">
             <div class="input-box">
               <span class="details">Username</span>
-              <input type="text" placeholder="Enter your name" value="<?php echo $row['username'] ?>" required>
+              <input name="username" type="text" placeholder="Enter your name" value="<?php echo $row['username'] ?>" required>
             </div>
             <div class=" input-box">
               <span class="details">Fullname</span>
-              <input type="text" placeholder="Enter your username" value="<?php echo $row['nama'] ?>" required>
+              <input name="name" type="text" placeholder="Enter your username" value="<?php echo $row['nama'] ?>" required>
             </div>
             <div class="input-box">
               <span class="details">Email</span>
-              <input type="email" placeholder="Enter your email" value="<?php echo $row['email'] ?>" required>
+              <input name="email" type="email" placeholder="Enter your email" value="<?php echo $row['email'] ?>" required>
             </div>
             <div class="input-box">
               <span class="details">Phone Number</span>
-              <input type="tel" placeholder="Enter your number" value="<?php echo $row['no_telp'] ?>" required>
+              <input name="phone" type="tel" placeholder="Enter your number" value="<?php echo $row['no_telp'] ?>" required>
             </div>
             <div class="input-box">
               <span class="details">Password</span>
-              <input type="password" placeholder="Enter your password" value="<?php echo $row['password'] ?>" required>
+              <input name="password" type="password" placeholder="Enter your password" value="<?php echo $password ?>" required>
             </div>
             <div class="input-box">
               <span class="details">Confirm Password</span>
-              <input type="password" placeholder="Confirm your password" value="<?php echo $row['password'] ?>" required>
+              <input name="c_password" type="password" placeholder="Confirm your password" value="<?php echo $password ?>" required>
             </div>
           </div>
           <div class="gender-details">
