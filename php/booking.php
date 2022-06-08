@@ -8,7 +8,7 @@ $date = $_GET['date'];
 $time = $_GET['time'];
 $lapangan = $_GET['lapangan'];
 $lapangan = explode(" ", $lapangan);
-$total = $jam * $lapangan[0];
+$total = $jam * $lapangan[0] + 3000;
 
 //Menghitung total
 $sql = "SELECT harga FROM lapangan where lap_id = '$lapangan[1]'";

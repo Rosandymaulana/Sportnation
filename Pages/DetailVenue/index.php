@@ -101,8 +101,8 @@ include "../../php/connect.php";
                     <div class="wrap">
 
                         <div class="flex">
-                            <div class="btn" style="background-color: darkslategray;">
-                                <a onclick="" style="color: white;">Pesan Sekarang</a>
+                            <div class="btn"  style="background-color: darkslategray;">
+                                <a href="../Booking/index.php?uid=<?php echo $row['tempat_id'] ?>" style="color: white;">Pesan Sekarang</a>
                             </div>
                         </div>
 

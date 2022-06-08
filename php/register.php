@@ -24,7 +24,7 @@ $query = "INSERT INTO user(user_id, nomor, nama, username, email, password, no_t
          ";
 mysqli_query($connect, $query);
 
-header('Location: ../Pages/Register/index.html');
+header('Location: ../Pages/Login/index.html');
 
 // /* execute statement */
 // if($stmt->execute()){
