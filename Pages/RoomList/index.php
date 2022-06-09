@@ -15,11 +15,50 @@ $id = $_SESSION['id'];
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="../../style.css">
 </head>
-
     <body>
+        <nav>
+    <div class="nav-bar">
+        <i class='bx bx-menu sidebarOpen'></i>
+
+        <span class="logo navLogo">
+            <a href="#">
+                <img class="brand" src="../../images/logo.png" alt="" style="width: 1.5rem; margin-right: .7rem;">
+                Sportnation
+            </a>
+        </span>
+
+        <div class="menu">
+            <div class="logo-toggle">
+                <span class="logo"><a href="../../index.php">Sportnation</a></span>
+                <i class='bx bx-x siderbarClose'></i>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="../../index.php">Home</a></li>
+                <li><a href="../About/index.php">About</a></li>
+                <li><a href="../DetailVenue/index.php">SportVenue</a></li>
+                <li><a href="#">Booking List</a></li>
+                <!-- <li><a href="#rooms">Rooms</a></li> -->
+                <li><a href="../Customer%20Service/index.php">Support</a></li>
+                <?php
+                if (isset($_SESSION['status'])) {
+                ?>
+                    <li><a href="../Account/index.php">Account</a></li>
+            </ul>
+        </div>
+        <a href="php/logout.php" class="register" style="background-color:#a9e7cc; color: #1D1D1D;">Logout</a>
+    <?php
+                } else {
+    ?>
+        <div class="button-box">
+            <a href="Pages/Login/index.html" class="login" style="background-color:#a9e7cc; color: #1D1D1D;">Masuk</a>
+            <a href="Pages/Register/index.html" class="register" style="background-color:#008080">Daftar</a>
         <?php
-        include '../parts/header/index.php';
+                }
         ?>
+        </div>
+    </div>
+</nav>
         <div class=" card">
             <?php
             $query = "Select * from booking b, lapangan l, tempat t where b.user_id = '$id' 
@@ -56,9 +95,55 @@ $id = $_SESSION['id'];
                     }
     ?>
     </div>
-    <?php
-    include '../parts/footer/footer.php';
-    ?>
+        <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col">
+                    <h4>Follow us</h4>
+                    <div class="social-links">
+                        <p style="color: whitesmoke;">getting used to sports is good</p>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Help</h4>
+                    <ul class="foot">
+                        <li><a href="../About/index.php">about us</a></li>
+                        <li><a href="../Customer Service/index.php">our services</a></li>
+                        <li><a href="#">privacy policy</a></li>
+                        <li><a href="#">affiliate program</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Features</h4>
+                    <ul class="foot">
+                        <li><a href="../FaQ/index.html">FAQ</a></li>
+                        <li><a href="#">shipping</a></li>
+                        <li><a href="#">returns</a></li>
+                        <li><a href="#">order status</a></li>
+                        <li><a href="#">payment options</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul class="foot">
+                        <li><a href="../Account/index.php">Account</a></li>
+                        <li><a href="#">bag</a></li>
+                        <li><a href="#">shoes</a></li>
+                        <li><a href="#">dress</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul class="foot">
+                        <li><a href="../Contact/index.html">contact us</a></li>
+                        <li><a href="#">bag</a></li>
+                        <li><a href="#">shoes</a></li>
+                        <li><a href="#">dress</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
     </body>
 
 </html>
