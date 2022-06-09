@@ -344,7 +344,7 @@ a.cta {
   margin: 10px 0;
   height: 150px;
   width: 150px;
-  background: #8e44ad;
+  background: #0071c7;
   padding: 3px;
   border-radius: 50%;
 }
@@ -366,7 +366,7 @@ a.cta {
 
 .box .name_job {
   margin: 10px 0 3px 0;
-  color: #8e44ad;
+  color: #0071c7;
   font-size: 18px;
   font-weight: 600;
 }
@@ -386,16 +386,16 @@ a.cta {
 }
 
 .btns button {
-  background: #8e44ad;
+  background: #0071c7;
   width: 100%;
   padding: 9px 0px;
   outline: none;
-  border: 2px solid #8e44ad;
+  border: 2px solid #0071c7;
   border-radius: 5px;
   cursor: pointer;
   font-size: 18px;
   font-weight: 400;
-  color: #8e44ad;
+  color: #0071c7;
   transition: all 0.3s linear;
 }
 
@@ -410,7 +410,7 @@ a.cta {
 }
 
 .btns button:first-child:hover {
-  background: #8e44ad;
+  background: #0071c7;
   color: #fff;
 }
 
