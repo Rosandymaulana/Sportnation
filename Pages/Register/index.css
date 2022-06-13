@@ -8,7 +8,7 @@ body {
 .page-content {
     width: 100%;
     margin: 0 auto;
-    background: #75e2e9;
+    background: #E4E9F7;
     display: flex;
     display: -webkit-flex;
     justify-content: center;
@@ -57,7 +57,7 @@ body {
 }
 
 .form-v4-content .form-left {
-    background: #0F70DA;
+    background: #008080;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
     padding: 20px 40px;
@@ -152,7 +152,7 @@ body {
 .form-v4-content .form-detail label {
     font-weight: 600;
     font-size: 15px;
-    color: #666;
+    color: #008080;
     display: block;
     margin-bottom: 8px;
 }
@@ -262,7 +262,7 @@ body {
 }
 
 .form-v4-content .form-detail .form-row input:focus {
-    border: 1px solid #0004fa;
+    border: 1px solid #2F4F4F;
 }
 
 .form-v4-content .form-detail .form-checkbox {
@@ -285,7 +285,7 @@ body {
     left: 0;
     height: 15px;
     width: 15px;
-    border: 1px solid rgb(7, 93, 253);
+    border: 1px solid #008080;
     cursor: pointer;
 }
 
@@ -310,7 +310,7 @@ body {
 }
 
 .button-input-box input {
-    background-color: #007AFF;
+    background-color: #008080;
 }
 
 .form-v4-content .form-detail .button-input-box input {
@@ -328,7 +328,6 @@ body {
 .form-v4-content .form-detail .form-checkbox .text {
     font-weight: 700;
     color: #3786bd;
-    text-decoration: underline;
 }
 
 .form-v4-content .form-detail .register {
@@ -361,6 +360,8 @@ label {
 .text-sign-up-text a {
     font-weight: 700;
     font-size: medium;
+    color: #B5B5B5;
+    text-decoration: none;
 }
 
 .text-sign-up-text button {

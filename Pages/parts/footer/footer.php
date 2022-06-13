@@ -28,38 +28,28 @@
                 <div class="footer-col">
                     <h4>Help</h4>
                     <ul class="foot">
-                        <li><a href="#">about us</a></li>
-                        <li><a href="#">our services</a></li>
-                        <li><a href="#">privacy policy</a></li>
-                        <li><a href="#">affiliate program</a></li>
+                        <li><a href="./Pages/About/index.html">About Us</a></li>
+                        <li><a href="./Pages/Customer Service/index.php">Our Services</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="./Pages/FaQ/index.html">FAQ</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
                     <h4>Features</h4>
                     <ul class="foot">
-                        <li><a href="#">FAQ</a></li>
-                        <li><a href="#">shipping</a></li>
-                        <li><a href="#">returns</a></li>
-                        <li><a href="#">order status</a></li>
-                        <li><a href="#">payment options</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Company</h4>
-                    <ul class="foot">
-                        <li><a href="./Pages/Acount/index.html">Account</a></li>
-                        <li><a href="#">bag</a></li>
-                        <li><a href="#">shoes</a></li>
-                        <li><a href="#">dress</a></li>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about-me">About</a></li>
+                        <li><a href="#sportvenue">Sport Venue</a></li>
+                        <li><a href="#event">Events</a></li>
+                        <li><a href="#featured">Featured Program</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
                     <h4>Contact</h4>
                     <ul class="foot">
-                        <li><a href="Pages/Contact/index.php">contact us</a></li>
-                        <li><a href="#">bag</a></li>
-                        <li><a href="#">shoes</a></li>
-                        <li><a href="#">dress</a></li>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Email</a></li>
                     </ul>
                 </div>
             </div>

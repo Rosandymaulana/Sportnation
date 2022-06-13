@@ -76,7 +76,7 @@ include "php/connect.php";
                     publishing your games to different platforms.
                 </p>
 
-                <a href="#" class="cta" style="background-color:#a9e7cc; color: #000000;">Cari Informasi</a>
+                <a href="#about-me" class="cta" style="background-color:#0071c7; color: white;">Cari Informasi</a>
             </div>
 
             <div class="right">
@@ -108,7 +108,6 @@ include "php/connect.php";
 
         <div class="about-me" id="about-me">
             <section class="about" id="about">
-                
                         <h1>About</h1>
                         <div class="about-me">
                             <figure>
@@ -192,51 +191,51 @@ include "php/connect.php";
             </div>
         </div>
 
-        <div class="disp">
+        <div class="disp" id="event">
             <center>
                 <h1>Event of the month</h1>
                 <p>You can join even and enjoy the fun</p>
             </center>
             <?php
-                $query = "select * from event Limit 3";
-                $result = mysqli_query($connect, $query);
-                if (mysqli_num_rows($result) == 0) {
+            $query = "select * from event Limit 3";
+            $result = mysqli_query($connect, $query);
+            if (mysqli_num_rows($result) == 0) {
+            ?>
+                <div class="wrap">
+                    <div class="image" style="padding: 30px;">
+                        <img src="football.jpg" alt="" width="400" height="300">
+                    </div>
+                    <div class="flex" style="padding: 30px;">
+                        <h1></h1>
+                        <p></p>
+                        <span><img src="./images/ic-tropy.png" alt="" style="width: 40px; padding-top: 1rem;"></span><strong></strong>
+                        <br><br><img src="./images/ic-location.png" alt="" style="width: 18px;"><a href="#">View Location</a>
+                        <br><br> <strong>Learn More --></strong>
+                    </div>
+                </div>
+                <?php
+            } else {
+                while ($row = mysqli_fetch_assoc($result)) {
                 ?>
-            <div class="wrap">
-                <div class="image" style="padding: 30px;">
-                    <img src="football.jpg" alt="" width="400" height="300">
-                </div>
-                <div class="flex" style="padding: 30px;">
-                    <h1></h1>
-                    <p></p>
-                    <span><img src="./images/ic-tropy.png" alt="" style="width: 40px; padding-top: 1rem;"></span><strong></strong>
-                    <br><br><img src="./images/ic-location.png" alt="" style="width: 18px;"><a href="#">View Location</a>
-                    <br><br> <strong>Learn More --></strong>
-                </div>
-            </div>
+                    <div class="wrap">
+                        <div class="image" style="padding: 30px;">
+                            <img src="<?php echo $row['foto'] ?>" alt="" width="400" height="300">
+                        </div>
+                        <div class="flex" style="padding: 30px;">
+                            <h1><?php echo $row['judul'] ?></h1>
+                            <p><?php echo $row['deskripsi'] ?></p>
+                            <span><img src="./images/ic-tropy.png" alt="" style="width: 40px; padding-top: 1rem;"></span><strong>Rp. <?php echo $row['htm'] ?></strong>
+                            <br><br><img src="./images/ic-location.png" alt="" style="width: 18px;"><a href="https://goo.gl/maps/cV3QHDGReHJWturQ7">View Location</a>
+                            <br><br> <strong>Learn More --></strong>
+                        </div>
+                    </div>
             <?php
-                }else{
-                    while ($row = mysqli_fetch_assoc($result)) {
-                        ?>
-            <div class="wrap">
-                <div class="image" style="padding: 30px;">
-                    <img src="<?php echo $row['foto']?>" alt="" width="400" height="300">
-                </div>
-                <div class="flex" style="padding: 30px;">
-                    <h1><?php echo $row['judul']?></h1>
-                    <p><?php echo $row['deskripsi']?></p>
-                    <span><img src="./images/ic-tropy.png" alt="" style="width: 40px; padding-top: 1rem;"></span><strong>Rp. <?php echo $row['htm']?></strong>
-                    <br><br><img src="./images/ic-location.png" alt="" style="width: 18px;"><a href="https://goo.gl/maps/cV3QHDGReHJWturQ7">View Location</a>
-                    <br><br> <strong>Learn More --></strong>
-                </div>
-            </div>
-                    <?php
-                    }
                 }
+            }
             ?>
         </div>
 
-        <div class="feature">
+        <div class="feature" id="featured">
             <center>
                 <h1>Featured program of the month</h1>
                 <p>Featured program of the month</p>
