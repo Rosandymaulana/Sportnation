@@ -21,9 +21,49 @@ include "php/connect.php";
 </head>
 
 <body>
+    <nav>
+    <div class="nav-bar">
+        <i class='bx bx-menu sidebarOpen'></i>
+
+        <span class="logo navLogo">
+            <a href="#">
+                <img class="brand" src="images/logo.png" alt="" style="width: 1.5rem; margin-right: .7rem;">
+                Sportnation
+            </a>
+        </span>
+
+        <div class="menu">
+            <div class="logo-toggle">
+                <span class="logo"><a href="../../index.php">Sportnation</a></span>
+                <i class='bx bx-x siderbarClose'></i>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="Pages/About/index.php">About</a></li>
+                <li><a href="Pages/DetailVenue/index.php">SportVenue</a></li>
+                <li><a href="Pages/RoomList/index.php">Booking List</a></li>
+                <!-- <li><a href="#rooms">Rooms</a></li> -->
+                <li><a href="Pages/Customer Service/index.php">Support</a></li>
+                <?php
+                if (isset($_SESSION['status'])) {
+                ?>
+                    <li><a href="Pages/Account/index.php">Account</a></li>
+            </ul>
+        </div>
+        <a href="php/logout.php" class="register" style="background-color:#a9e7cc; color: #1D1D1D;">Logout</a>
     <?php
-    include "Pages/parts/header/index.php";
+                } else {
     ?>
+        <div class="button-box">
+            <a href="Pages/Login/index.html" class="login" style="background-color:#a9e7cc; color: #1D1D1D;">Masuk</a>
+            <a href="Pages/Register/index.html" class="register" style="background-color:#008080">Daftar</a>
+        <?php
+                }
+        ?>
+        </div>
+    </div>
+</nav>
     <main>
         <div class="hero-section" id="home">
             <div class="left">
@@ -68,18 +108,16 @@ include "php/connect.php";
 
         <div class="about-me" id="about-me">
             <section class="about" id="about">
-
-                <h1>About</h1>
-                <div class="about-me">
-                    <figure>
-                        <img src="https://wallpaperaccess.com/full/378757.png" alt="">
-                    </figure>
-                    <p>We served the best place to do Sports,
-                        With best price,
-                        best facility,
-                        best field, etc.
-                    </p>
-                </div>
+                        <h1>About</h1>
+                        <div class="about-me">
+                            <figure>
+                                <img src="https://wallpaperaccess.com/full/378757.png" alt="">
+                            </figure>
+                            <p>Sewa Lapangan dengan website Sportnation dapat membantu Anda melakukan penyewaan lapangan untuk melaksanakan Olahraga seperti Futsal dan sejenisnya dengan penggunaan website yang mudah dimengerti.
+                                <br>Anda dapat menyewa kapan saja dengan berbagai pilihan lapangan dan tempat, serta dapat memilih waktu yang diinginkan.
+                                <br>Olahraga sangat penting untuk menjaga kesehatan tubuh. Yuk, gunakan website Sportnation dan mulailah berolahraga bersama tim dan teman agar tubuh terasa lebih bugar.
+                            </p>
+                        </div>
             </section>
         </div>
 
@@ -224,9 +262,55 @@ include "php/connect.php";
 
     </main>
 
-    <?php
-    include "./Pages/parts/footer/footer.php";
-    ?>
+        <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col">
+                    <h4>Follow us</h4>
+                    <div class="social-links">
+                        <p style="color: whitesmoke;">getting used to sports is good</p>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Help</h4>
+                    <ul class="foot">
+                        <li><a href="Pages/About/index.php">about us</a></li>
+                        <li><a href="Pages/Customer Service/index.php">our services</a></li>
+                        <li><a href="#">privacy policy</a></li>
+                        <li><a href="#">affiliate program</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Features</h4>
+                    <ul class="foot">
+                        <li><a href="Pages/FaQ/index.html">FAQ</a></li>
+                        <li><a href="#">shipping</a></li>
+                        <li><a href="#">returns</a></li>
+                        <li><a href="#">order status</a></li>
+                        <li><a href="#">payment options</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul class="foot">
+                        <li><a href="./Pages/Acount/index.html">Account</a></li>
+                        <li><a href="#">bag</a></li>
+                        <li><a href="#">shoes</a></li>
+                        <li><a href="#">dress</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul class="foot">
+                        <li><a href="Pages/Contact/index.php">contact us</a></li>
+                        <li><a href="#">bag</a></li>
+                        <li><a href="#">shoes</a></li>
+                        <li><a href="#">dress</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
 
     <script>
         const body = document.querySelector("body"),
