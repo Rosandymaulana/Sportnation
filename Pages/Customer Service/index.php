@@ -21,9 +21,49 @@ include "../../php/connect.php";
 </head>
 
 <body>
-  <?php
-  include "../parts/header/index.php";
-  ?>
+  <nav>
+    <div class="nav-bar">
+        <i class='bx bx-menu sidebarOpen'></i>
+
+        <span class="logo navLogo">
+            <a href="#">
+                <img class="brand" src="../../images/logo.png" alt="" style="width: 1.5rem; margin-right: .7rem;">
+                Sportnation
+            </a>
+        </span>
+
+        <div class="menu">
+            <div class="logo-toggle">
+                <span class="logo"><a href="../../index.php">Sportnation</a></span>
+                <i class='bx bx-x siderbarClose'></i>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="../../index.php">Home</a></li>
+                <li><a href="../About/index.php">About</a></li>
+                <li><a href="../../index.php#sportvenue">SportVenue</a></li>
+                <!-- <li><a href="#rooms">Rooms</a></li> -->
+                <li><a href="../Customer%20Service/index.php">Support</a></li>
+                <?php
+                if (isset($_SESSION['status'])) {
+                    ?>
+                    <li><a href="../RoomList/index.php">Booking List</a></li>
+                    <li><a href="../Account/index.php">Account</a></li>
+            </ul>
+        </div>
+        <a href="php/logout.php" class="register" style="background-color:#a9e7cc; color: #1D1D1D;">Logout</a>
+    <?php
+                } else {
+    ?>
+        <div class="button-box">
+            <a href="../Login/index.html" class="login" style="background-color:#a9e7cc; color: #1D1D1D;">Masuk</a>
+            <a href="../Register/index.html" class="register" style="background-color:#008080">Daftar</a>
+        <?php
+                }
+        ?>
+        </div>
+    </div>
+</nav>
 
   <!-- navigasi -->
 

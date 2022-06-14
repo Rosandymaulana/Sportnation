@@ -41,13 +41,13 @@ include "php/connect.php";
             <ul class="nav-links">
                 <li><a href="#">Home</a></li>
                 <li><a href="Pages/About/index.php">About</a></li>
-                <li><a href="Pages/DetailVenue/index.php">SportVenue</a></li>
-                <li><a href="Pages/RoomList/index.php">Booking List</a></li>
+                <li><a href="#sportvenue">SportVenue</a></li>
                 <!-- <li><a href="#rooms">Rooms</a></li> -->
                 <li><a href="Pages/Customer Service/index.php">Support</a></li>
                 <?php
                 if (isset($_SESSION['status'])) {
-                ?>
+                    ?>
+                    <li><a href="Pages/RoomList/index.php">Booking List</a></li>
                     <li><a href="Pages/Account/index.php">Account</a></li>
             </ul>
         </div>
@@ -262,7 +262,7 @@ include "php/connect.php";
 
     </main>
 
-        <footer class="footer">
+    <footer class="footer">
         <div class="container">
             <div class="row">
                 <div class="footer-col">
@@ -274,55 +274,45 @@ include "php/connect.php";
                 <div class="footer-col">
                     <h4>Help</h4>
                     <ul class="foot">
-                        <li><a href="Pages/About/index.php">about us</a></li>
-                        <li><a href="Pages/Customer Service/index.php">our services</a></li>
-                        <li><a href="#">privacy policy</a></li>
-                        <li><a href="#">affiliate program</a></li>
+                        <li><a href="Pages/About/index.php">About Us</a></li>
+                        <li><a href="Pages/Customer Service/index.php">Our Services</a></li>
+                        <li><a href="Pages/Contact/index.html">Contact</a></li>
+                        <li><a href="Pages/FaQ/index.html">FAQ</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
                     <h4>Features</h4>
                     <ul class="foot">
-                        <li><a href="Pages/FaQ/index.html">FAQ</a></li>
-                        <li><a href="#">shipping</a></li>
-                        <li><a href="#">returns</a></li>
-                        <li><a href="#">order status</a></li>
-                        <li><a href="#">payment options</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Company</h4>
-                    <ul class="foot">
-                        <li><a href="./Pages/Acount/index.html">Account</a></li>
-                        <li><a href="#">bag</a></li>
-                        <li><a href="#">shoes</a></li>
-                        <li><a href="#">dress</a></li>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#about-me">About</a></li>
+                        <li><a href="#sportvenue">Sport Venue</a></li>
+                        <li><a href="#event">Events</a></li>
+                        <li><a href="#featured">Featured Program</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
                     <h4>Contact</h4>
                     <ul class="foot">
-                        <li><a href="Pages/Contact/index.php">contact us</a></li>
-                        <li><a href="#">bag</a></li>
-                        <li><a href="#">shoes</a></li>
-                        <li><a href="#">dress</a></li>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Email</a></li>
                     </ul>
                 </div>
             </div>
         </div>
     </footer>
-
+    
     <script>
         const body = document.querySelector("body"),
-            nav = document.querySelector("nav"),
-            searchToggle = document.querySelector(".searchToggle"),
-            sidebarOpen = document.querySelector(".sidebarOpen"),
-            siderbarClose = document.querySelector(".siderbarClose");
-
+        nav = document.querySelector("nav"),
+        searchToggle = document.querySelector(".searchToggle"),
+        sidebarOpen = document.querySelector(".sidebarOpen"),
+        siderbarClose = document.querySelector(".siderbarClose");
+        
         sidebarOpen.addEventListener("click", () => {
             nav.classList.add("active");
         });
-
+        
         body.addEventListener("click", e => {
             let clickedElm = e.target;
 
@@ -330,7 +320,7 @@ include "php/connect.php";
                 nav.classList.remove("active");
             }
         });
-    </script>
+        </script>
 
 </body>
 

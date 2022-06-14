@@ -36,13 +36,13 @@ $id = $_SESSION['id'];
             <ul class="nav-links">
                 <li><a href="../../index.php">Home</a></li>
                 <li><a href="../About/index.php">About</a></li>
-                <li><a href="../DetailVenue/index.php">SportVenue</a></li>
-                <li><a href="#">Booking List</a></li>
+                <li><a href="../../index.php#sportvenue">SportVenue</a></li>
                 <!-- <li><a href="#rooms">Rooms</a></li> -->
                 <li><a href="../Customer%20Service/index.php">Support</a></li>
                 <?php
                 if (isset($_SESSION['status'])) {
-                ?>
+                    ?>
+                    <li><a href="#">Booking List</a></li>
                     <li><a href="../Account/index.php">Account</a></li>
             </ul>
         </div>
@@ -51,8 +51,8 @@ $id = $_SESSION['id'];
                 } else {
     ?>
         <div class="button-box">
-            <a href="Pages/Login/index.html" class="login" style="background-color:#a9e7cc; color: #1D1D1D;">Masuk</a>
-            <a href="Pages/Register/index.html" class="register" style="background-color:#008080">Daftar</a>
+            <a href="../Login/index.html" class="login" style="background-color:#a9e7cc; color: #1D1D1D;">Masuk</a>
+            <a href="../Register/index.html" class="register" style="background-color:#008080">Daftar</a>
         <?php
                 }
         ?>
@@ -71,7 +71,7 @@ $id = $_SESSION['id'];
         <img src="<?php echo $row['foto'] ?>" alt="">
         <h5><?php echo $row['lap_id'] ?></h5>
         <p class="place">
-            <img src="../../images/ic-location.png" alt="">
+            <img src="https://cdn-icons.flaticon.com/png/512/2838/premium/2838912.png?token=exp=1655221877~hmac=edf3f0f95a83dc98e3b9e153fcdf2f7e" alt="">
             SM Futsal
         </p>
         <p class="place">
@@ -87,8 +87,7 @@ $id = $_SESSION['id'];
             <?php echo $row['durasi'] ?>
         </p>
         <div class="info">
-            <h3><?php echo $row['total'] ?></h3>
-            <button>Join Now</button>
+            <h3>Rp.<?php echo $row['total'] ?></h3>
         </div>
     </div>
     <?php
@@ -107,43 +106,32 @@ $id = $_SESSION['id'];
                 <div class="footer-col">
                     <h4>Help</h4>
                     <ul class="foot">
-                        <li><a href="../About/index.php">about us</a></li>
-                        <li><a href="../Customer Service/index.php">our services</a></li>
-                        <li><a href="#">privacy policy</a></li>
-                        <li><a href="#">affiliate program</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="../Customer Service/index.php">Our Services</a></li>
+                        <li><a href="../Contact/index.html">Contact</a></li>
+                        <li><a href="../FaQ/index.html">FAQ</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
                     <h4>Features</h4>
                     <ul class="foot">
-                        <li><a href="../FaQ/index.html">FAQ</a></li>
-                        <li><a href="#">shipping</a></li>
-                        <li><a href="#">returns</a></li>
-                        <li><a href="#">order status</a></li>
-                        <li><a href="#">payment options</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Company</h4>
-                    <ul class="foot">
-                        <li><a href="../Account/index.php">Account</a></li>
-                        <li><a href="#">bag</a></li>
-                        <li><a href="#">shoes</a></li>
-                        <li><a href="#">dress</a></li>
+                        <li><a href="../../index.php">Home</a></li>
+                        <li><a href="../../index.php#about-me">About</a></li>
+                        <li><a href="../../index.php#sportvenue">Sport Venue</a></li>
+                        <li><a href="../../index.php#event">Events</a></li>
+                        <li><a href="../../index.php#featured">Featured Program</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
                     <h4>Contact</h4>
                     <ul class="foot">
-                        <li><a href="../Contact/index.html">contact us</a></li>
-                        <li><a href="#">bag</a></li>
-                        <li><a href="#">shoes</a></li>
-                        <li><a href="#">dress</a></li>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Email</a></li>
                     </ul>
                 </div>
             </div>
         </div>
     </footer>
     </body>
-
 </html>
